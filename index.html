@@ -2,9 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Create a small square rainbow icon using CSS -->
+    <style>
+      /* Custom solution for favicon */
+      .favicon-container {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+      #favicon-rainbow {
+        width: 32px;
+        height: 32px;
+        background-image: url('/Rainbow.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 6px;
+        position: absolute;
+      }
+    </style>
+    <link rel="icon" href="/vite.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Rainbow</title>
+    <!-- Change favicon using JavaScript -->
+    <script>
+      // Create a custom favicon
+      document.addEventListener('DOMContentLoaded', () => {
+        try {
+          const faviconLink = document.querySelector('link[rel="icon"]');
+          const tempCanvas = document.createElement('canvas');
+          tempCanvas.width = 32;
+          tempCanvas.height = 32;
+          const ctx = tempCanvas.getContext('2d');
+          
+          // Create a temporary image to draw to canvas
+          const img = new Image();
+          img.onload = function() {
+            // Clear canvas
+            ctx.clearRect(0, 0, 32, 32);
+            // Draw background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, 32, 32);
+            
+            // Calculate dimensions to maintain aspect ratio
+            const aspectRatio = img.width / img.height;
+            let drawWidth, drawHeight, offsetX, offsetY;
+            
+            if (aspectRatio > 1) {
+              drawWidth = 32;
+              drawHeight = 32 / aspectRatio;
+              offsetX = 0;
+              offsetY = (32 - drawHeight) / 2;
+            } else {
+              drawHeight = 32;
+              drawWidth = 32 * aspectRatio;
+              offsetX = (32 - drawWidth) / 2;
+              offsetY = 0;
+            }
+            
+            // Draw image preserving aspect ratio
+            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+            
+            // Update favicon
+            faviconLink.href = tempCanvas.toDataURL('image/png');
+          };
+          
+          // Load the rainbow image
+          img.src = '/Rainbow.png';
+        } catch (e) {
+          console.error('Failed to create custom favicon:', e);
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>
