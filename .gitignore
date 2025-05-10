@@ -55,6 +55,3 @@ lerna-debug.log*
 
 # Yarn Integrity file
 .yarn-integrity
-
-# User preferences
-preferences.md
