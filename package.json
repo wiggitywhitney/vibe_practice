@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "health": "node server.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "journal:remind": "./scripts/journal-reminder.sh"
   },
   "dependencies": {
     "cors": "^2.8.5",

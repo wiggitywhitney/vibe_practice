@@ -11,7 +11,6 @@
 - Implement graceful shutdown handling in all applications
 - Properly handle exit status codes (0 for success, non-zero for errors)
 - Design applications to be container-friendly
-- Update timestamps automatically with git hooks
 
 ## Git & GitHub Workflow
 - Regular commits after major changes
@@ -49,6 +48,20 @@
 - Need progressive complexity with clear explanations
 - Want guidance on modern patterns and practices
 - Will indicate if explanations become overwhelming
+
+## Journal Entries
+- Create daily journal entries for days with development activity
+- Structure entries with these specific sections:
+  1. A detailed summary of the day's accomplishments
+  2. A clear snapshot of the project's current state
+  3. Explicitly discussed next steps (not speculative)
+  4. Recommendations for next session preparation
+- Format as markdown with date header (## YYYY-MM-DD)
+- Store entries chronologically in engineering-journal.md with newest at top
+- When updating, replace only the specific entry for the current date
+- Preserve all entries from other dates
+- Print entries to chat for quick review
+- Stage commits with consistent message format "Add journal entry for YYYY-MM-DD"
 
 ## Documentation
 - Keep this preferences.md file updated as new preferences are discovered

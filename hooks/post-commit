@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Get current hour (24-hour format)
+HOUR=$(date +"%H")
+CURRENT_TIME=$(date +"%H:%M")
+
+# Check if it's after 3pm (hour 15 or later)
+if [ "$HOUR" -ge 15 ]; then
+  echo ""
+  echo "╔════════════════════════════════════════════════════════╗"
+  echo "║                JOURNAL REMINDER                        ║"
+  echo "║                                                        ║"
+  echo "║ It's after 3pm ($CURRENT_TIME)! Remember to update your journal ║"
+  echo "║ Run: npm run journal:remind                            ║" 
+  echo "╚════════════════════════════════════════════════════════╝"
+  echo ""
+fi
+
+exit 0 
