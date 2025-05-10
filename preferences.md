@@ -11,6 +11,12 @@
 - Commits approximately every 30 minutes
 - Use GitHub CLI for all GitHub interactions
 
+## Development Process
+- Ask for confirmation before implementing each individual step
+- Propose one change at a time and wait for my acceptance
+- Never implement multiple features at once without explicit approval
+- Break down larger tasks but wait for approval on each subtask
+
 ## Terminal Commands
 - Provide copy buttons for all terminal commands
 - Do NOT run commands automatically - allow manual copy/paste into terminal
