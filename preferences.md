@@ -11,6 +11,7 @@
 - Implement graceful shutdown handling in all applications
 - Properly handle exit status codes (0 for success, non-zero for errors)
 - Design applications to be container-friendly
+- Update timestamps automatically with git hooks
 
 ## Git & GitHub Workflow
 - Regular commits after major changes
@@ -58,4 +59,4 @@
 - Verify image aspect ratios are preserved in all contexts
 - Explicitly mention when a trade-off is necessary that might conflict with preferences
 
-*Last updated: June 4, 2024* 
+*Last updated: May 10, 2025* 
