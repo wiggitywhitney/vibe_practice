@@ -6,6 +6,12 @@
 - Set up hot reloading for development
 - Make no assumptions about programming languages or technologies
 
+## DevOps & Deployment
+- Use port 8080 for all web applications to align with DevOps standards
+- Implement graceful shutdown handling in all applications
+- Properly handle exit status codes (0 for success, non-zero for errors)
+- Design applications to be container-friendly
+
 ## Git & GitHub Workflow
 - Regular commits after major changes
 - Commits approximately every 30 minutes
