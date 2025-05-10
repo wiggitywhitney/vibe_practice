@@ -1,12 +1,89 @@
-# React + Vite
+# Vibe Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="public/Rainbow.png" alt="Rainbow" width="400" style="max-width: 100%; height: auto;"/>
+</div>
 
-Currently, two official plugins are available:
+A modern React application implementing DevOps best practices. This project showcases the integration of modern front-end development with solid DevOps principles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Primary Purpose**: This application was created specifically to experiment with and explore the capabilities of Cursor, the AI-powered code editor.
 
-## Expanding the ESLint configuration
+## Table of Contents
+- [Features](#features)
+- [Development Environment](#development-environment)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Available Scripts](#available-scripts)
+- [DevOps Features](#devops-features)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- React 19 with Vite build system
+- Hot reloading for development
+- Health monitoring server
+- Graceful shutdown handling
+- Test-Driven Development (TDD) approach
+- DevOps-friendly configuration
+- Proper image aspect ratio preservation
+
+## Development Environment
+
+### Prerequisites
+
+- Node.js (LTS version recommended)
+- npm or yarn
+- Git
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/wiggitywhitney/vibe_practice.git
+cd vibe_practice
+
+# Install dependencies
+npm install
+```
+
+### Available Scripts
+
+```bash
+# Start the development server (port 8080)
+npm run dev
+
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Start the health monitoring server
+npm run health
+```
+
+## DevOps Features
+
+- **Standard Port**: Uses port 8080 instead of Vite's default 5173
+- **Health Monitoring**: Dedicated Express server for health checks
+- **Signal Handling**: Proper handling of SIGTERM and SIGINT signals
+- **Exit Codes**: Appropriate exit codes for success and failure states
+- **Container-Friendly**: Application designed with containerization in mind
+
+## Testing
+
+This project uses Jest and React Testing Library for testing. We follow a Test-Driven Development (TDD) approach:
+
+1. Write tests first
+2. Implement the minimum code required to pass the tests
+3. Refactor while keeping tests passing
+
+## Project Structure
+
+- `/src`: React application source code
+  - `/src/components`: React components
+  - `/src/__tests__`: Test files
+- `/public`: Static assets including images
+- `server.js`: Health monitoring server (root level file)
+- `preferences.md`: Development preferences and guidelines
