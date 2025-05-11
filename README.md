@@ -93,8 +93,9 @@ The project includes an automated developer journal system that:
 - Integrates with Cursor AI to generate properly formatted entries
 - Includes post-commit hooks for additional reminders
 - Supports both macOS and Linux notification systems
+- Generates weekly development statistics on Monday mornings
 
-For detailed setup and usage instructions, see [JOURNAL_REMINDER.md](./JOURNAL_REMINDER.md).
+For detailed setup and usage instructions, see [JOURNAL_SYSTEM.md](./docs/journal/JOURNAL_SYSTEM.md).
 
 ## Project Structure
 

@@ -1,5 +1,7 @@
 # Journal Reminder System
 
+Part of the Vibe Practice Journal System.
+
 A simple reminder system to prompt you to create journal entries using Cursor's AI.
 
 ## How It Works
@@ -29,11 +31,6 @@ The journal reminder can be triggered manually at any time using npm:
 # Run the journal reminder script
 npm run journal:remind
 ```
-
-This is particularly useful when:
-- You want to create an entry before the 3pm automatic reminder
-- You accidentally dismissed the notification
-- You're working from a different machine and need to set up the reminder manually
 
 ## Setting Up the Cron Job with Notifications
 
@@ -78,4 +75,8 @@ If you're using Linux, use this notification command instead:
 
 ```bash
 0 15 * * * cd /path/to/vibe_practice && ./scripts/journal-reminder.sh | notify-send "Vibe Practice Journal" "Time to create your journal entry!"
-``` 
+```
+
+## Related Components
+
+- [Journal Statistics System](./JOURNAL_STATISTICS.md) - Weekly development statistics on Monday mornings 

@@ -34,7 +34,6 @@ fi
 ENTRY_EXISTS=false
 if [ -f "$JOURNAL_FILE" ] && grep -q "## $DATE" "$JOURNAL_FILE"; then
   ENTRY_EXISTS=true
-  echo -e "${YELLOW}Note: An entry for today already exists. It will be updated.${RESET}\n"
 fi
 
 echo -e "${CYAN}Please read the entire preferences.md file to understand all project guidelines, with special attention to the Journal Entries section.${RESET}"
@@ -52,7 +51,7 @@ echo -e "${CYAN}1. Place the entry at the top of $JOURNAL_FILE (creating the fil
 echo -e "${CYAN}2. If an entry for today ($DATE) already exists, replace only that specific entry${RESET}"
 echo -e "${CYAN}3. Stage the commit with message \"Add journal entry for $DATE\"${RESET}"
 echo -e "${CYAN}4. Print the entry to our chat for review${RESET}"
-echo -e "${CYAN}5. Prompt me to run 'git commit' to finalize${RESET}\n"
+echo -e "${CYAN}5. Set up the git commit command for me to run (don't run it automatically)${RESET}\n"
 
 echo -e "${GREEN}Cursor will help you create your journal entry for today.${RESET}\n"
 echo -e "${GREEN}NOTE: Today is determined by checking git commits made since midnight (12am), but your journal should include ALL work performed today.${RESET}\n" 

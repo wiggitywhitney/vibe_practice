@@ -68,6 +68,31 @@
 - Print entries to chat for quick review
 - Stage commits with consistent message format "Add journal entry for YYYY-MM-DD"
 
+## Journal Statistics
+- Generate weekly statistics for the engineering journal
+- Run statistics generation on Monday mornings
+- Structure statistics entries with these specific sections:
+  1. Popular Technologies (most mentioned technologies, growing trends, new tech)
+  2. Terminology Frequency (technical terms, concepts, and tools used)
+  3. Development Patterns (recurring workflows, time allocation, collaboration)
+  4. Development Activity (features completed, productive periods, not just commit counts)
+  5. Code Changes (files modified, lines added/removed, most changed files)
+  6. Focus Areas (categories of work based on commit messages and journal entries)
+  7. Time-based Patterns (most productive days/times, consistency metrics)
+  8. Knowledge Gaps & Learning (topics researched, documentation needed, learning curve)
+- Follow these data integrity guidelines:
+  - Use ONLY verifiable git data for commit counts, files changed, etc.
+  - Analyze actual commit messages for focus areas
+  - Clearly mark any estimates with [ESTIMATE] and only include if 80%+ confident
+  - Include estimates only when derived from multiple consistent data points
+  - Use "Data not available" rather than making up statistics
+  - For keyword analysis, only include terms actually found in code/commits
+- Format as markdown with special date range header (## Statistics: YYYY-MM-DD to YYYY-MM-DD)
+- Place statistics entries after the current day's entry but before previous days' entries
+- Never overwrite statistics entries when creating daily journal entries
+- Print statistics to chat for review
+- Stage commits with consistent message format "Add weekly journal statistics for YYYY-MM-DD"
+
 ## Documentation
 - Keep this preferences.md file updated as new preferences are discovered
 - This file is public and committed to the repository as a reference
