@@ -3,6 +3,10 @@
 Please create an engineering journal entry for today.
 
 BEFORE YOU START:
+- Set today's date as an environment variable by running: `export TODAY=$(date +%Y-%m-%d)`
+- Verify the stored date by running: `echo $TODAY`
+- Check if an entry for today ($TODAY) already exists in engineering-journal.md 
+- If an entry for today exists, UPDATE that entry instead of creating a new one
 - Run 'git log --since="12am"' to see ALL commits made today
 - Run 'git status' to see ALL pending changes
 - Review the most recent entry in engineering-journal.md for formatting and style
@@ -10,14 +14,17 @@ BEFORE YOU START:
 - Review your terminal history to ensure ALL commands are documented
 
 THIS JOURNAL ENTRY MUST:
-- Document EVERY development activity from today
+- Document EVERY development activity for TODAY'S ACTUAL DATE ($TODAY, not tomorrow or any future date)
+- If an entry for today already exists, UPDATE that entry instead of creating a new one
 - Follow EXACTLY the same structure as previous entries, with one exception: always include the Technical Decisions section even if previous entries don't have it
 - Be placed at the TOP of docs/journal/engineering-journal.md (create file if it doesn't exist)
 - Replace any existing entry for today while preserving all other entries
 - Use natural, human-like language instead of technical jargon throughout the entire entry
 
+IMPORTANT: Never create entries for future dates. Always use the current date ($TODAY) and update the existing entry if one exists for today.
+
 REQUIRED SECTION HEADERS (use these EXACT headers):
-## [Use today's date in YYYY-MM-DD format]
+## [Replace this with the actual date from $TODAY, e.g., ## 2025-05-11]
 ### Accomplishments
 ### Current State
 ### Technical Decisions
