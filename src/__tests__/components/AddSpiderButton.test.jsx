@@ -28,4 +28,18 @@ describe('AddSpiderButton - Rendering and Positioning', () => {
     // accurately compute CSS values. In a real browser, the add-spider-button
     // class will apply black text, white background, and white border.
   });
+});
+
+// New test block for Chunk 2: Font Integration
+describe('AddSpiderButton - Font Integration', () => {
+  test('uses custom spider font', () => {
+    render(<AddSpiderButton />);
+    const button = screen.getByRole('button');
+    
+    // Check that the button has the class that will apply the custom font
+    expect(button).toHaveClass('spider-font');
+    
+    // Note: We can't test actual font rendering in Jest/JSDOM,
+    // but we can verify the class that will apply the font is present
+  });
 }); 

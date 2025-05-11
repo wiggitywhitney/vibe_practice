@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'SpiderFont';
+  src: url('/fonts/spider-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .lower-left {
   position: absolute;
   bottom: 20px;
@@ -13,4 +20,8 @@
   border: 2px solid white;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.spider-font {
+  font-family: 'SpiderFont', sans-serif;
 } 

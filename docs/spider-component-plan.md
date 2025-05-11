@@ -56,3 +56,4 @@
 2. Write tests for each chunk in order
 3. Implement components to pass tests
 4. Get approval at each step before proceeding 
+5. Create a git commit after tests pass for each chunk 
