@@ -91,11 +91,10 @@ This project uses Jest and React Testing Library for testing. We follow a Test-D
 
 The project includes an automated developer journal system that:
 
-- Reminds you to create daily journal entries at 3pm
+- Provides terminal-based daily journal reminders at 5pm
 - Uses git commit history to suggest journal content
 - Integrates with Cursor AI to generate properly formatted entries
-- Includes post-commit hooks for additional reminders
-- Supports both macOS and Linux notification systems
+- Runs in terminal only without system notifications
 - Generates weekly development statistics on Monday mornings
 
 For detailed setup and usage instructions, see [JOURNAL_SYSTEM.md](./docs/journal/JOURNAL_SYSTEM.md).
@@ -111,4 +110,4 @@ For detailed setup and usage instructions, see [JOURNAL_SYSTEM.md](./docs/journa
   - `/docs/journal`: Journal system documentation
   - `/docs/preferences.md`: Development preferences and guidelines
 - `/scripts`: Utility scripts
-  - `/scripts/hooks`: Git hooks
+  - `/scripts/hooks`: Pre-commit hook for preferences date updates

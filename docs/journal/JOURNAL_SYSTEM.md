@@ -6,10 +6,9 @@ A comprehensive developer journal system with automated reminders, AI-powered en
 
 The journal system consists of two main components:
 
-1. **[Journal Reminder System](./JOURNAL_REMINDER.md)** - Daily reminders at 3pm
+1. **[Journal Reminder System](./JOURNAL_REMINDER.md)** - Daily reminders at 5pm in terminal
    - Checks for git activity since midnight
    - Generates properly formatted journal entries
-   - Integrates with post-commit hooks
    - Documents your daily development activities
 
 2. **[Journal Statistics System](./JOURNAL_STATISTICS.md)** - Weekly statistics on Mondays at 7am

@@ -6,8 +6,8 @@ A simple reminder system to prompt you to create journal entries using Cursor's 
 
 ## How It Works
 
-1. A reminder script runs at 3pm daily with a system notification
-2. If you've made git commits today, clicking the notification shows the prompt to copy into Cursor
+1. A reminder script runs at 5pm daily in your terminal (no system notification)
+2. If you've made git commits today, the terminal will display the prompt to copy into Cursor
 3. You paste the prompt into Cursor, which follows the guidelines in [preferences.md](../preferences.md) to:
    - Create a properly formatted journal entry 
    - Save it to engineering-journal.md (creating the file if needed)
@@ -32,13 +32,13 @@ The journal reminder can be triggered manually at any time using npm:
 npm run journal:remind
 ```
 
-## Setting Up the Cron Job with Notifications
+## Setting Up the Cron Job (Terminal Only, No Notifications)
 
-To enable the daily reminder at 3pm with macOS notifications, add this to your crontab:
+To enable the daily reminder at 5pm that prints only to the terminal (no system notifications), add this to your crontab:
 
 ```bash
-# Display journal reminder at 3pm daily with notification
-0 15 * * * cd /path/to/vibe_practice && ./scripts/journal-reminder.sh | osascript -e 'display notification "Time to create your journal entry!" with title "Vibe Practice Journal"'
+# Display journal reminder at 5pm daily in terminal only
+0 17 * * * cd /path/to/vibe_practice && ./scripts/journal-reminder.sh >> ~/journal-reminders.log 2>&1
 ```
 
 To edit your crontab:
@@ -46,35 +46,15 @@ To edit your crontab:
 crontab -e
 ```
 
-## Post-Commit Reminders
-
-A git hook is installed that will remind you to update your journal each time you make a commit after 3pm. This ensures you don't forget to document your work.
-
-If you need to reinstall this hook (for example, if it's not working or got deleted):
-
-```bash
-cp scripts/hooks/post-commit .git/hooks/
-chmod +x .git/hooks/post-commit
-```
+Note: This approach outputs the reminder to a log file. To have it appear in your terminal, you need to have a terminal open at 5pm. For a more reliable approach that doesn't require an open terminal, you could use `tmux` or similar terminal multiplexer.
 
 ## Testing the System
 
 You can test the reminder at any time:
 
 ```bash
-# Test the notification
-./scripts/journal-reminder.sh | osascript -e 'display notification "Time to create your journal entry!" with title "Vibe Practice Journal"'
-
 # See the full prompt
 ./scripts/journal-reminder.sh
-```
-
-## For Linux Systems
-
-If you're using Linux, use this notification command instead:
-
-```bash
-0 15 * * * cd /path/to/vibe_practice && ./scripts/journal-reminder.sh | notify-send "Vibe Practice Journal" "Time to create your journal entry!"
 ```
 
 ## Related Components

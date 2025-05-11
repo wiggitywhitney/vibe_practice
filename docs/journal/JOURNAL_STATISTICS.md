@@ -92,4 +92,4 @@ This ensures your statistics accurately reflect your development work rather tha
 
 ## Related Components
 
-- [Journal Reminder System](./JOURNAL_REMINDER.md) - Daily journal entry reminders at 3pm 
+- [Journal Reminder System](./JOURNAL_REMINDER.md) - Daily journal entry reminders at 5pm in terminal 

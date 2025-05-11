@@ -1,5 +1,6 @@
 #!/bin/bash
 # scripts/journal-reminder.sh
+# Terminal-only journal reminder system for 5pm daily reminders
 
 # ANSI color codes for better visibility
 YELLOW='\033[1;33m'
