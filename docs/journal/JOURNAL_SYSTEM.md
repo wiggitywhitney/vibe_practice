@@ -4,14 +4,20 @@ A comprehensive developer journal system with automated reminders, AI-powered en
 
 ## System Components
 
-The journal system consists of two main components:
+The journal system consists of three main components:
 
 1. **[Journal Reminder System](./JOURNAL_REMINDER.md)** - Daily reminders at 5pm in terminal
    - Checks for git activity since midnight
-   - Generates properly formatted journal entries
-   - Documents your daily development activities
+   - Provides minimal notification with link to instructions
+   - Prompts creation of daily development entries
 
-2. **[Journal Statistics System](./JOURNAL_STATISTICS.md)** - Weekly statistics on Mondays at 7am
+2. **[Journal Instructions](./JOURNAL_INSTRUCTIONS.md)** - Comprehensive prompt for Cursor
+   - Contains copy-paste instructions for Claude/Cursor
+   - Ensures consistent formatting and content structure
+   - Manages next steps tracking with date tagging
+   - Guides the git workflow for journal updates
+
+3. **[Journal Statistics System](./JOURNAL_STATISTICS.md)** - Weekly statistics on Mondays at 7am
    - Analyzes git history and journal entries
    - Generates development metrics and patterns
    - Tracks technology usage and focus areas
@@ -30,8 +36,8 @@ This unified journal system provides:
 ## Getting Started
 
 1. Set up the [Journal Reminder System](./JOURNAL_REMINDER.md)
-2. Configure the [Journal Statistics System](./JOURNAL_STATISTICS.md)
-3. Follow the guidelines in [preferences.md](../preferences.md)
+2. Review the [Journal Instructions](./JOURNAL_INSTRUCTIONS.md)
+3. Configure the [Journal Statistics System](./JOURNAL_STATISTICS.md)
 
 ## Running the System
 

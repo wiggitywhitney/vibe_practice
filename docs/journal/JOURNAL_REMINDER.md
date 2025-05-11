@@ -7,21 +7,22 @@ A simple reminder system to prompt you to create journal entries using Cursor's 
 ## How It Works
 
 1. A reminder script runs at 5pm daily in your terminal (no system notification)
-2. If you've made git commits today, the terminal will display the prompt to copy into Cursor
-3. You paste the prompt into Cursor, which follows the guidelines in [preferences.md](../preferences.md) to:
-   - Create a properly formatted journal entry 
-   - Save it to engineering-journal.md (creating the file if needed)
-   - Update only today's entry if it already exists
-   - Stage the commit and prompt you to finalize it
+2. If you've made git commits today, the terminal displays a minimal reminder with a link to instructions
+3. You open [JOURNAL_INSTRUCTIONS.md](./JOURNAL_INSTRUCTIONS.md) and copy its contents
+4. You paste the instructions into Cursor, which then:
+   - Creates a properly formatted journal entry 
+   - Saves it to engineering-journal.md (creating the file if needed)
+   - Updates only today's entry if it already exists
+   - Suggests git commands to stage and commit the changes
 
 ## Journal Entry Guidelines
 
-All journal entry requirements are documented in the **Journal Entries** section of [`preferences.md`](../preferences.md). This ensures:
+All journal entry requirements are now documented in [`JOURNAL_INSTRUCTIONS.md`](./JOURNAL_INSTRUCTIONS.md), which contains:
 
-1. Consistent formatting across all entries
-2. Proper content structure
-3. Correct file management
-4. Git integration
+1. Detailed formatting requirements
+2. Content structure with specific sections
+3. Next Steps management rules
+4. Git workflow instructions
 
 ## Using the Journal Reminder Command
 
@@ -53,10 +54,11 @@ Note: This approach outputs the reminder to a log file. To have it appear in you
 You can test the reminder at any time:
 
 ```bash
-# See the full prompt
+# Run the journal reminder
 ./scripts/journal-reminder.sh
 ```
 
 ## Related Components
 
+- [Journal Instructions](./JOURNAL_INSTRUCTIONS.md) - Comprehensive instructions for creating journal entries
 - [Journal Statistics System](./JOURNAL_STATISTICS.md) - Weekly development statistics on Monday mornings 

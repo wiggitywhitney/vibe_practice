@@ -52,22 +52,8 @@
 
 ## Journal Entries
 - Create daily journal entries for days with development activity
-- Structure entries with these specific sections:
-  1. A detailed summary of the day's accomplishments
-  2. A clear snapshot of the project's current state
-  3. Explicitly discussed next steps (not speculative)
-  4. Recommendations for next session preparation
-- **Include ALL development activities from the entire day, not just recent work:**
-  - All git commits made during the day
-  - Setup, configuration, and documentation work
-  - All features and components created or modified
-  - Development activities even if they weren't committed
-- Format as markdown with date header (## YYYY-MM-DD)
-- Store entries chronologically in engineering-journal.md with newest at top
-- When updating, replace only the specific entry for the current date
-- Preserve all entries from other dates
-- Print entries to chat for quick review
-- Stage commits with consistent message format "Add journal entry for YYYY-MM-DD"
+- For detailed journal entry requirements and formats, see [docs/journal/JOURNAL_INSTRUCTIONS.md](./journal/JOURNAL_INSTRUCTIONS.md)
+- All journal entries should follow the guidelines in JOURNAL_INSTRUCTIONS.md exactly
 
 ## Journal Statistics
 - Generate weekly statistics for the engineering journal
@@ -103,4 +89,4 @@
 - Verify image aspect ratios are preserved in all contexts
 - Explicitly mention when a trade-off is necessary that might conflict with preferences
 
-*Last updated: May 10, 2025* 
+*Last updated: May 11, 2025* 

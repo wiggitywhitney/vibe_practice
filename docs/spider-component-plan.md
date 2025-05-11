@@ -56,4 +56,5 @@
 2. Write tests for each chunk in order
 3. Implement components to pass tests
 4. Get approval at each step before proceeding 
-5. Create a git commit after tests pass for each chunk 
+5. Create a git commit after tests pass for each chunk
+6. For font integration (Chunk 2), integrate the component into App.jsx for visual verification before proceeding to Chunk 3 
