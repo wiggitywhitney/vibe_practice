@@ -56,6 +56,11 @@
   2. A clear snapshot of the project's current state
   3. Explicitly discussed next steps (not speculative)
   4. Recommendations for next session preparation
+- **Include ALL development activities from the entire day, not just recent work:**
+  - All git commits made during the day
+  - Setup, configuration, and documentation work
+  - All features and components created or modified
+  - Development activities even if they weren't committed
 - Format as markdown with date header (## YYYY-MM-DD)
 - Store entries chronologically in engineering-journal.md with newest at top
 - When updating, replace only the specific entry for the current date
