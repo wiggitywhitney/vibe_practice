@@ -16,6 +16,7 @@ A modern React application implementing DevOps best practices. This project show
   - [Available Scripts](#available-scripts)
 - [DevOps Features](#devops-features)
 - [Testing](#testing)
+- [Journal System](#journal-system)
 - [Project Structure](#project-structure)
 
 ## Features
@@ -27,6 +28,7 @@ A modern React application implementing DevOps best practices. This project show
 - Test-Driven Development (TDD) approach
 - DevOps-friendly configuration
 - Proper image aspect ratio preservation
+- Developer journal system with automated reminders
 
 ## Development Environment
 
@@ -61,6 +63,9 @@ npm run test:watch
 
 # Start the health monitoring server
 npm run health
+
+# Trigger journal reminder manually
+npm run journal:remind
 ```
 
 ## DevOps Features
@@ -78,6 +83,18 @@ This project uses Jest and React Testing Library for testing. We follow a Test-D
 1. Write tests first
 2. Implement the minimum code required to pass the tests
 3. Refactor while keeping tests passing
+
+## Journal System
+
+The project includes an automated developer journal system that:
+
+- Reminds you to create daily journal entries at 3pm
+- Uses git commit history to suggest journal content
+- Integrates with Cursor AI to generate properly formatted entries
+- Includes post-commit hooks for additional reminders
+- Supports both macOS and Linux notification systems
+
+For detailed setup and usage instructions, see [JOURNAL_REMINDER.md](./JOURNAL_REMINDER.md).
 
 ## Project Structure
 

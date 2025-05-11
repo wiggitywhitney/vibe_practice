@@ -21,6 +21,20 @@ All journal entry requirements are documented in the **Journal Entries** section
 3. Correct file management
 4. Git integration
 
+## Using the Journal Reminder Command
+
+The journal reminder can be triggered manually at any time using npm:
+
+```bash
+# Run the journal reminder script
+npm run journal:remind
+```
+
+This is particularly useful when:
+- You want to create an entry before the 3pm automatic reminder
+- You accidentally dismissed the notification
+- You're working from a different machine and need to set up the reminder manually
+
 ## Setting Up the Cron Job with Notifications
 
 To enable the daily reminder at 3pm with macOS notifications, add this to your crontab:
