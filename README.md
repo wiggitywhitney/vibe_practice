@@ -103,5 +103,9 @@ For detailed setup and usage instructions, see [JOURNAL_SYSTEM.md](./docs/journa
   - `/src/components`: React components
   - `/src/__tests__`: Test files
 - `/public`: Static assets including images
-- `server.js`: Health monitoring server (root level file)
-- `preferences.md`: Development preferences and guidelines
+- `/server`: Health monitoring server
+- `/docs`: Project documentation
+  - `/docs/journal`: Journal system documentation
+  - `/docs/preferences.md`: Development preferences and guidelines
+- `/scripts`: Utility scripts
+  - `/scripts/hooks`: Git hooks

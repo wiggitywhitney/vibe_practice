@@ -32,7 +32,7 @@ This unified journal system provides:
 
 1. Set up the [Journal Reminder System](./JOURNAL_REMINDER.md)
 2. Configure the [Journal Statistics System](./JOURNAL_STATISTICS.md)
-3. Follow the guidelines in preferences.md
+3. Follow the guidelines in [preferences.md](../preferences.md)
 
 ## Running the System
 

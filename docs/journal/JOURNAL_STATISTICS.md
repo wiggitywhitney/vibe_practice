@@ -16,7 +16,7 @@ A system to automatically generate weekly development statistics based on your g
 
 ## Statistics Categories
 
-The system generates statistics in these categories as defined in the Journal Statistics section of preferences.md:
+The system generates statistics in these categories as defined in the Journal Statistics section of [preferences.md](../preferences.md):
 
 1. **Popular Technologies** - Most mentioned technologies, trending topics
 2. **Terminology Frequency** - Technical terms, concepts and tools used

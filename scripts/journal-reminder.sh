@@ -8,7 +8,7 @@ CYAN='\033[0;36m'
 RESET='\033[0m'
 
 DATE=$(date +"%Y-%m-%d")
-JOURNAL_FILE="engineering-journal.md"
+JOURNAL_FILE="docs/journal/engineering-journal.md"
 
 # Check for git activity
 GIT_ACTIVITY=$(git log --since="12am" --pretty=format:"%h")
@@ -36,9 +36,9 @@ if [ -f "$JOURNAL_FILE" ] && grep -q "## $DATE" "$JOURNAL_FILE"; then
   ENTRY_EXISTS=true
 fi
 
-echo -e "${CYAN}Please read the entire preferences.md file to understand all project guidelines, with special attention to the Journal Entries section.${RESET}"
+echo -e "${CYAN}Please read the entire docs/preferences.md file to understand all project guidelines, with special attention to the Journal Entries section.${RESET}"
 echo -e "${CYAN}${RESET}"
-echo -e "${CYAN}Create an engineering journal entry for today ($DATE) following the guidelines in preferences.md.${RESET}"
+echo -e "${CYAN}Create an engineering journal entry for today ($DATE) following the guidelines in docs/preferences.md.${RESET}"
 echo -e "${CYAN}${RESET}"
 echo -e "${CYAN}IMPORTANT: Include ALL activities from the entire day, not just recent work. Consider:${RESET}"
 echo -e "${CYAN}- All git commits made today (git log --since=\"12am\")${RESET}"

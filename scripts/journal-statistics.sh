@@ -8,7 +8,7 @@ CYAN='\033[0;36m'
 RESET='\033[0m'
 
 DATE=$(date +"%Y-%m-%d")
-JOURNAL_FILE="engineering-journal.md"
+JOURNAL_FILE="docs/journal/engineering-journal.md"
 
 # Check OS for date command compatibility
 OS=$(uname)
@@ -50,9 +50,9 @@ else
   fi
 fi
 
-echo -e "${CYAN}Please read the entire preferences.md file to understand all project guidelines, with special attention to the Journal Statistics section.${RESET}"
+echo -e "${CYAN}Please read the entire docs/preferences.md file to understand all project guidelines, with special attention to the Journal Statistics section.${RESET}"
 echo -e "${CYAN}${RESET}"
-echo -e "${CYAN}Create journal statistics for the week of ${LAST_MONDAY} to ${LAST_SUNDAY} following the guidelines in preferences.md.${RESET}"
+echo -e "${CYAN}Create journal statistics for the week of ${LAST_MONDAY} to ${LAST_SUNDAY} following the guidelines in docs/preferences.md.${RESET}"
 echo -e "${CYAN}${RESET}"
 echo -e "${CYAN}IMPORTANT: Use the statistics-specific header format '## Statistics: ${LAST_MONDAY} to ${LAST_SUNDAY}' to distinguish from regular journal entries.${RESET}"
 echo -e "${CYAN}${RESET}"

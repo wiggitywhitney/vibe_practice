@@ -8,7 +8,7 @@ A simple reminder system to prompt you to create journal entries using Cursor's 
 
 1. A reminder script runs at 3pm daily with a system notification
 2. If you've made git commits today, clicking the notification shows the prompt to copy into Cursor
-3. You paste the prompt into Cursor, which follows the guidelines in preferences.md to:
+3. You paste the prompt into Cursor, which follows the guidelines in [preferences.md](../preferences.md) to:
    - Create a properly formatted journal entry 
    - Save it to engineering-journal.md (creating the file if needed)
    - Update only today's entry if it already exists
@@ -16,7 +16,7 @@ A simple reminder system to prompt you to create journal entries using Cursor's 
 
 ## Journal Entry Guidelines
 
-All journal entry requirements are documented in the **Journal Entries** section of `preferences.md`. This ensures:
+All journal entry requirements are documented in the **Journal Entries** section of [`preferences.md`](../preferences.md). This ensures:
 
 1. Consistent formatting across all entries
 2. Proper content structure
@@ -53,7 +53,7 @@ A git hook is installed that will remind you to update your journal each time yo
 If you need to reinstall this hook (for example, if it's not working or got deleted):
 
 ```bash
-cp hooks/post-commit .git/hooks/
+cp scripts/hooks/post-commit .git/hooks/
 chmod +x .git/hooks/post-commit
 ```
 
