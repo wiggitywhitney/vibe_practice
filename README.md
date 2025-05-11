@@ -66,6 +66,9 @@ npm run health
 
 # Trigger journal reminder manually
 npm run journal:remind
+
+# Generate weekly journal statistics
+npm run journal:stats
 ```
 
 ## DevOps Features

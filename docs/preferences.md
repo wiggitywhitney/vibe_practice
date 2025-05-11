@@ -27,6 +27,7 @@
 - Provide copy buttons for all terminal commands
 - Do NOT run commands automatically - allow manual copy/paste into terminal
 - Never assume command execution is desired
+- Always format commands as bash code blocks for clickable "run" functionality
 
 ## UI/UX Preferences
 - Always preserve image aspect ratios - never stretch images (includes favicons, icons, and all UI elements)
