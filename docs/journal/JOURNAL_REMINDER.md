@@ -27,9 +27,10 @@ All journal entry requirements are now documented in [`JOURNAL_INSTRUCTIONS.md`]
    - Today's Next Steps
    - Previous Next Steps
    - Preparation for Next Session
-3. Anti-hallucination guidelines for factual accuracy
-4. Next Steps management rules
-5. Git workflow instructions
+3. Natural language guidelines to ensure readability
+4. Anti-hallucination guidelines for factual accuracy
+5. Next Steps management rules
+6. Git workflow instructions
 
 ## Using the Journal Reminder Command
 

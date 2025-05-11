@@ -1,49 +1,67 @@
 ## 2025-05-11
 
 ### Accomplishments
-- **Applied strict Test-Driven Development (TDD) methodology** throughout the day:
-  - Wrote tests first, verified they failed, then implemented code to make them pass
-  - Created multiple test cases before each implementation phase
-  - Maintained disciplined development process with clear separation of test and implementation
-- Implemented the AddSpiderButton component following TDD principles:
-  - Created a comprehensive implementation plan with chunked development approach
-  - Implemented Chunk 1: Button rendering and positioning
-  - Added tests to verify button rendering, position, and styling
-  - Implemented Chunk 2: Font integration with custom spider-font.ttf
-  - Set up @font-face declaration and proper CSS classes for the font
-- Improved the journal system with streamlined reminders and comprehensive instructions:
-  - Changed from git hook-based 3pm reminder to terminal-only 5pm reminder
-  - Modified system infrastructure to simplify the reminder process
-  - Created JOURNAL_INSTRUCTIONS.md with detailed formatting guidelines
-  - Updated documentation in JOURNAL_REMINDER.md and JOURNAL_SYSTEM.md
-  - Split Next Steps into "Today's Next Steps" and "Previous Next Steps"
-  - Added date tagging system to track item age
-  - Established rules for flagging and removing older items
-- Previously updated the journal reminder system
-- Updated the development process in the implementation plan to include:
-  - Git commits after each successfully completed chunk
-  - Visual verification for font integration before proceeding to next chunks
-- Removed previous SpiderButton implementation (replaced with AddSpiderButton)
-- Added Spider.png image and custom spider font for the application
-- Created detailed test cases using Jest and React Testing Library
+- **Component Development**:
+  - Built the first version of the AddSpiderButton that appears in the lower left corner
+  - Added proper styling with black text on white background and outline
+  - Integrated a custom spider font to match the design specs
+  - Created detailed tests for each feature before implementation
+  - Followed strict TDD methodology throughout development
+  - Replaced the previous SpiderButton with the new implementation
+  - Added necessary assets including Spider.png and custom font files
+
+- **Journal System Improvements**:
+  - Completely revamped how the journal system works:
+    - Switched from git hook reminders at 3pm to simpler terminal notifications at 5pm
+    - Created a dedicated instructions document for consistency
+    - Split Next Steps into today's tasks and previous items
+    - Added date tracking to show how old carried-over tasks are
+    - Flag and remove older items automatically (8+ and 10+ entries)
+  - Added a Technical Decisions section to document the "why" behind technical choices
+  - Implemented anti-hallucination guidelines to ensure factual accuracy
+  - Updated all documentation to reflect the new structure
+
+- **Development Process Refinements**:
+  - Established a chunked development approach for more manageable progress
+  - Added visual verification checkpoints between implementation phases
+  - Created a more disciplined git workflow with commits after each completed chunk
 
 ### Current State
-- AddSpiderButton component is partially implemented with:
-  - Proper positioning in the lower left corner
-  - Correct styling (black text, white background and outline)
-  - Custom font integration
-- Test suite passing for the implemented chunks
-- Implementation plan document provides clear guidance for remaining work
-- Project is following TDD methodology with tests written before implementation
-- Journal system now features:
-  - Streamlined terminal-only approach at 5pm
-  - Comprehensive JOURNAL_INSTRUCTIONS.md document with copyable prompt
-  - Clear separation of immediate and carried-over tasks
-  - Age tracking for previous next steps
-- Remaining chunks to implement:
-  - Chunk 3: Toggle functionality
-  - Chunk 4: Spider display
-  - Chunk 5: Rainbow opacity changes
+- **Component Status**:
+  - AddSpiderButton is partially implemented with proper positioning and styling
+  - Custom font integration is working correctly
+  - Test suite is passing for all implemented features
+  - Ready for next implementation chunks (toggle, spider display, opacity)
+
+- **Development Infrastructure**:
+  - Project is following TDD methodology throughout
+  - Implementation plan document guides the remaining work
+  - Visual verification checkpoints are in place between chunks
+  - Chunked approach is working well for manageable progress
+
+- **Journal System Status**:
+  - Using streamlined terminal-only notifications at 5pm
+  - Comprehensive instructions document provides consistent formatting
+  - Next Steps management includes date tracking and clean-up rules
+  - Technical Decisions section captures implementation reasoning
+  - Anti-hallucination guidelines ensure factual content
+
+### Technical Decisions
+- **Chunked Implementation Approach for AddSpiderButton**:
+  - Decided to implement the component in distinct chunks rather than all at once
+  - Benefits include easier testing, more frequent working states, and clearer progress tracking
+  - Trade-off accepted: slightly longer total implementation time versus simpler testing
+  
+- **Journal System Enhancement Strategy**:
+  - Selected a three-component architecture (Reminder, Instructions, Statistics) for separation of concerns
+  - Chose terminal-only notifications over system alerts for simplicity and reliability
+  - Implemented date tagging format (MM-DD) based on balance between brevity and clarity
+  - Selected 8+ entries threshold for [Old] flag based on typical task lifecycle
+  
+- **Technical Decisions Section Addition**:
+  - Implemented as a standalone section rather than integrating with Accomplishments to separate what was done from why
+  - Added specific validation in the anti-hallucination guidelines to prevent fabrication of decision rationales
+  - Maintained backward compatibility by including instructions to always add this section even if previous entries don't have it
 
 ### Today's Next Steps
 - Integrate the AddSpiderButton component into App.jsx for visual verification

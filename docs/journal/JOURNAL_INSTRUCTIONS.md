@@ -14,6 +14,7 @@ THIS JOURNAL ENTRY MUST:
 - Follow EXACTLY the same structure as previous entries, with one exception: always include the Technical Decisions section even if previous entries don't have it
 - Be placed at the TOP of docs/journal/engineering-journal.md (create file if it doesn't exist)
 - Replace any existing entry for today while preserving all other entries
+- Use natural, human-like language instead of technical jargon throughout the entire entry
 
 REQUIRED SECTION HEADERS (use these EXACT headers):
 ## [Use today's date in YYYY-MM-DD format]
@@ -23,6 +24,23 @@ REQUIRED SECTION HEADERS (use these EXACT headers):
 ### Today's Next Steps
 ### Previous Next Steps
 ### Preparation for Next Session
+
+ACCOMPLISHMENTS SECTION GUIDELINES:
+- Group accomplishments by theme or area of work (e.g., "Component Development", "Documentation", "Testing")
+- Use bold headings for each thematic group followed by bulleted details
+- Eliminate redundancy - don't repeat the same information in multiple places
+- For example, write "Built a button that shows up in the corner" instead of "Implemented button rendering with correct positioning"
+- Consolidate related items rather than listing each small change separately
+- Focus on what was accomplished, not just what was changed
+
+CURRENT STATE SECTION GUIDELINES:
+- Organize this section thematically just like the Accomplishments section
+- Use bold headings for major categories (e.g., "Component Status", "Development Infrastructure", "System Status")
+- Provide a concise snapshot of where each aspect of the project stands
+- Focus on the current state, not how it got there (that belongs in Accomplishments)
+- Highlight what's working and what's pending
+- Keep descriptions brief and clear
+- Ensure consistency between themes in Accomplishments and Current State when possible
 
 ANTI-HALLUCINATION GUIDELINES (extremely important):
 - ONLY include activities that are clearly evidenced in git history, git status, terminal history, or chat conversations
@@ -36,8 +54,12 @@ ANTI-HALLUCINATION GUIDELINES (extremely important):
 - When in doubt about ANY information, omit it entirely rather than being vague or speculative
 
 CONTENT REQUIREMENTS (repeat these checks multiple times):
+✓ Use natural, human-like language throughout the entire journal entry
+✓ Avoid technical jargon where simpler explanations would work better
 ✓ Include ALL development activities from today (do NOT include verbatim commit messages or phrases like "Commit:" or "Earlier commit:")
 ✓ Describe ALL activities in natural language without referencing specific commits
+✓ Group and organize activities thematically according to the Accomplishments Section Guidelines
+✓ Structure the Current State section thematically according to the Current State Section Guidelines
 ✓ Include ALL journal system changes (if any were made)
 ✓ Document ALL component work (even if incomplete)
 ✓ Document ALL visual verification steps performed
@@ -85,6 +107,9 @@ NEXT STEPS SECTION REQUIREMENTS:
 REQUIRED CHECKLIST (verify EACH item):
 - [ ] Included ALL journal system changes (if any)
 - [ ] Included all git commits with their messages
+- [ ] Grouped accomplishments thematically with clear headings
+- [ ] Used natural, human-like language where possible
+- [ ] Organized Current State section thematically with clear status updates
 - [ ] Included work done on components (even if incomplete)
 - [ ] Included visual verification steps performed
 - [ ] Included changes to development process

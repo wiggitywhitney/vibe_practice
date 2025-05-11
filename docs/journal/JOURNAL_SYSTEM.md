@@ -14,6 +14,8 @@ The journal system consists of three main components:
 2. **[Journal Instructions](./JOURNAL_INSTRUCTIONS.md)** - Comprehensive prompt for Cursor
    - Contains copy-paste instructions for Claude/Cursor
    - Ensures consistent formatting and content structure
+   - Uses thematic organization for improved readability
+   - Emphasizes natural, human-like language over technical jargon
    - Manages next steps tracking with date tagging
    - Documents technical decisions with reasoning and alternatives
    - Includes anti-hallucination guidelines for factual accuracy

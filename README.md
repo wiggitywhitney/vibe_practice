@@ -94,6 +94,8 @@ The project includes an automated developer journal system that:
 - Provides terminal-based daily journal reminders at 5pm
 - Uses git commit history to suggest journal content
 - Integrates with Cursor AI to generate properly formatted entries
+- Documents technical decisions with reasoning and alternatives
+- Uses thematic organization for improved readability
 - Runs in terminal only without system notifications
 - Generates weekly development statistics on Monday mornings
 
