@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# This pre-commit hook updates the "Last updated" date in docs/preferences.md automatically
+
+# Check if docs/preferences.md exists and is staged
+if git diff --cached --name-only | grep -q "docs/preferences.md"; then
+    echo "Updating date in docs/preferences.md..."
+    
+    # Get the current date in the desired format
+    CURRENT_DATE=$(date +"%B %-d, %Y")
+    
+    # Create a temp file for sed processing
+    TEMP_FILE=$(mktemp)
+    
+    # Update the date in the file
+    sed -E "s/\*Last updated: [^*]+\*/*Last updated: $CURRENT_DATE*/" docs/preferences.md > "$TEMP_FILE"
+    
+    # Copy the modified content back to the original file
+    cp "$TEMP_FILE" docs/preferences.md
+    
+    # Clean up
+    rm "$TEMP_FILE"
+    
+    # Add the modified file back to staging
+    git add docs/preferences.md
+    
+    echo "docs/preferences.md date updated to: $CURRENT_DATE"
+fi
+
+# Exit with success status
+exit 0 
