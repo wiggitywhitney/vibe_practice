@@ -19,9 +19,7 @@
   - Split Next Steps into "Today's Next Steps" and "Previous Next Steps"
   - Added date tagging system to track item age
   - Established rules for flagging and removing older items
-  - Commit: "Improve journal system with streamlined reminders and comprehensive instructions"
-- Previously updated the journal reminder system:
-  - Earlier commit: "Update journal system"
+- Previously updated the journal reminder system
 - Updated the development process in the implementation plan to include:
   - Git commits after each successfully completed chunk
   - Visual verification for font integration before proceeding to next chunks

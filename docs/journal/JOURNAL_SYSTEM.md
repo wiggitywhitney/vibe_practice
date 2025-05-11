@@ -15,6 +15,8 @@ The journal system consists of three main components:
    - Contains copy-paste instructions for Claude/Cursor
    - Ensures consistent formatting and content structure
    - Manages next steps tracking with date tagging
+   - Documents technical decisions with reasoning and alternatives
+   - Includes anti-hallucination guidelines for factual accuracy
    - Guides the git workflow for journal updates
 
 3. **[Journal Statistics System](./JOURNAL_STATISTICS.md)** - Weekly statistics on Mondays at 7am
@@ -31,6 +33,7 @@ This unified journal system provides:
 - **Automated Reminders**: Timely prompts for creating entries and statistics
 - **Development Insights**: Analytics to understand your work patterns
 - **Historical Record**: Comprehensive project history and evolution
+- **Decision Documentation**: Captures the reasoning behind technical choices
 - **AI Integration**: Leveraging Cursor AI for intelligent content generation
 
 ## Getting Started

@@ -20,9 +20,16 @@ A simple reminder system to prompt you to create journal entries using Cursor's 
 All journal entry requirements are now documented in [`JOURNAL_INSTRUCTIONS.md`](./JOURNAL_INSTRUCTIONS.md), which contains:
 
 1. Detailed formatting requirements
-2. Content structure with specific sections
-3. Next Steps management rules
-4. Git workflow instructions
+2. Content structure with specific sections including:
+   - Accomplishments
+   - Current State
+   - Technical Decisions (with reasoning and alternatives)
+   - Today's Next Steps
+   - Previous Next Steps
+   - Preparation for Next Session
+3. Anti-hallucination guidelines for factual accuracy
+4. Next Steps management rules
+5. Git workflow instructions
 
 ## Using the Journal Reminder Command
 
