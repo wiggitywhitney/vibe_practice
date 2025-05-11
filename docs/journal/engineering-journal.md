@@ -11,10 +11,17 @@
   - Added tests to verify button rendering, position, and styling
   - Implemented Chunk 2: Font integration with custom spider-font.ttf
   - Set up @font-face declaration and proper CSS classes for the font
-- Updated the journal reminder system:
+- Improved the journal system with streamlined reminders and comprehensive instructions:
   - Changed from git hook-based 3pm reminder to terminal-only 5pm reminder
   - Modified system infrastructure to simplify the reminder process
-  - Commit related to this change: "Update journal system"
+  - Created JOURNAL_INSTRUCTIONS.md with detailed formatting guidelines
+  - Updated documentation in JOURNAL_REMINDER.md and JOURNAL_SYSTEM.md
+  - Split Next Steps into "Today's Next Steps" and "Previous Next Steps"
+  - Added date tagging system to track item age
+  - Established rules for flagging and removing older items
+  - Commit: "Improve journal system with streamlined reminders and comprehensive instructions"
+- Previously updated the journal reminder system:
+  - Earlier commit: "Update journal system"
 - Updated the development process in the implementation plan to include:
   - Git commits after each successfully completed chunk
   - Visual verification for font integration before proceeding to next chunks
@@ -30,7 +37,11 @@
 - Test suite passing for the implemented chunks
 - Implementation plan document provides clear guidance for remaining work
 - Project is following TDD methodology with tests written before implementation
-- Journal reminder system now using terminal-only approach at 5pm instead of git hooks at 3pm
+- Journal system now features:
+  - Streamlined terminal-only approach at 5pm
+  - Comprehensive JOURNAL_INSTRUCTIONS.md document with copyable prompt
+  - Clear separation of immediate and carried-over tasks
+  - Age tracking for previous next steps
 - Remaining chunks to implement:
   - Chunk 3: Toggle functionality
   - Chunk 4: Spider display
