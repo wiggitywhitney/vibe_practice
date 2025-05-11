@@ -55,10 +55,14 @@ ANTI-HALLUCINATION GUIDELINES (extremely important):
 - NEVER fabricate specific implementation details that aren't visible in the evidence
 - If you can't find clear evidence for something, DO NOT mention it at all - omit completely rather than speculating
 - For Technical Decisions section, only include reasoning with definitive evidence from commits, code comments, chat discussions, or obvious code changes - if uncertain, omit that decision entirely
+- NEVER include speculative alternatives that were not explicitly discussed in the conversation
+- DO NOT use phrases like "considered alternatives" unless specific alternatives were actually mentioned
+- When documenting Technical Decisions, focus ONLY on what was explicitly stated or clearly implied in the conversation
 - DO NOT include uncertain technical decisions with phrases like "appears to have" - if you can't be certain, say nothing about it
 - DO NOT make up specific alternatives that were considered unless explicitly mentioned in commits/code/chats
 - For Next Steps, only include items explicitly mentioned in communication
 - When in doubt about ANY information, omit it entirely rather than being vague or speculative
+- If a decision was made but alternatives weren't discussed, simply state the decision without speculating about alternatives
 
 CONTENT REQUIREMENTS (repeat these checks multiple times):
 ✓ Use natural, human-like language throughout the entire journal entry
@@ -121,6 +125,7 @@ REQUIRED CHECKLIST (verify EACH item):
 - [ ] Included visual verification steps performed
 - [ ] Included changes to development process
 - [ ] Added Technical Decisions section with rationales for key choices
+- [ ] Verified all Technical Decisions are based ONLY on evidence, with NO speculation about alternatives not discussed
 - [ ] Used two separate Next Steps sections correctly
 - [ ] Added appropriate date tags to Previous Next Steps items
 - [ ] Sorted Previous Next Steps from newest to oldest
