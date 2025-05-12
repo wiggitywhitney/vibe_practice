@@ -13,21 +13,32 @@
 - Design applications to be container-friendly
 
 ## Git & GitHub Workflow
-- Regular commits after major changes
+- Suggest commits after major changes
 - Commits approximately every 30 minutes
 - Use GitHub CLI for all GitHub interactions
 
 ## Development Process
-- Ask for confirmation before implementing each individual step
-- Propose one change at a time and wait for my acceptance
-- Never implement multiple features at once without explicit approval
-- Break down larger tasks but wait for approval on each subtask
-- **When making code changes, only change one file at a time, but multiple changes within that file are allowed. Always explain the changes being made.**
+
+- **General Rule: No changes will be applied without explicit approval.**
+- Information gathering steps (reading files, searching code, running read-only commands) do not require approval.
+
+- **Application Code Changes (e.g., React components, CSS, server logic):**
+  - Ask for confirmation before implementing each logical step or small group of related changes.
+  - Generally, propose changes affecting only one file at a time, though multiple related changes within that file are acceptable per proposal.
+  - **When proposing multiple changes within a single file, present them as a numbered list** to allow for specific feedback or approval/rejection of individual items.
+  - Explain the changes being made clearly.
+
+- **Other Tasks (e.g., Journaling, Taskmaster, Config Files, Documentation):**
+  - Changes can be proposed in logical groups, potentially affecting multiple files at once.
+  - **When proposing multiple changes in a single step, present them as a numbered list** to allow for specific feedback or approval/rejection of individual items.
+  - Wait for approval on the proposed group before implementing any changes.
+
+- **Task Breakdown:**
+  - Break down larger tasks but wait for approval on each subtask implementation step (following the rules above based on task type).
 
 ## Terminal Commands
 - Provide copy buttons for all terminal commands
-- Do NOT run commands automatically - allow manual copy/paste into terminal
-- Never assume command execution is desired
+- Automatic execution of terminal commands via tools is acceptable.
 - Always format commands as bash code blocks for clickable "run" functionality
 
 ## UI/UX Preferences
