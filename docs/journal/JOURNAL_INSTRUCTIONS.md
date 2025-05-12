@@ -101,6 +101,7 @@ NEXT STEPS SECTION REQUIREMENTS:
    - NOT include date tags
    - Focus ONLY on immediate, agreed-upon actions
    - NEVER include speculative or possible future tasks
+   - When generating a new journal entry for a new date, review the most recent previous entry. Copy all uncompleted items from that entry's "Today's Next Steps" section into the new entry's "Previous Next Steps" section, adding a date tag (e.g., "(from MM-DD)") using the previous entry's date. Do not include items that were completed.
 
 2. "Previous Next Steps" section must:
    - Include ALL uncompleted items from previous entries
@@ -136,8 +137,7 @@ REQUIRED CHECKLIST (verify EACH item):
 CRITICAL: Compare your proposed journal entry with yesterday's entry to ensure consistent formatting and completeness. IMPORTANT EXCEPTION: Always include the Technical Decisions section even if it doesn't exist in previous entries.
 
 AFTER COMPLETING THE ENTRY:
-1. Print the COMPLETE entry to our chat for review
-2. Guide the user through the git process with these commands (DO NOT run them):
+Guide the user through the git process with these commands (DO NOT run them):
    a. First show: git status
    b. Then suggest: git add docs/journal/engineering-journal.md
    c. Then suggest: git commit -m "Add journal entry for 2025-05-11" (substitute today's actual date)
