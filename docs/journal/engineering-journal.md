@@ -28,6 +28,7 @@
   - Updated `spider-component-plan.md` with a Development Notes section to document the rainbow refactor and button styling changes.
   - Updated `docs/preferences.md` to refine development process (granularity, numbering, approval) and terminal command (auto-run) rules.
   - Refined journal instructions (`docs/journal/JOURNAL_INSTRUCTIONS.md`) for clarity and granularity.
+  - Significantly refocused `README.md` to emphasize AI tooling exploration (Cursor, Taskmaster, Context7, Memory) as the primary project goal, de-emphasizing the React app and journal system.
 
 - **Preferences & Memory Management:**
   - Defined a list of key user preferences (excluding journaling) for storage in MCP memory.
@@ -58,6 +59,7 @@
   - `docs/preferences.md` is updated with refined development process and terminal command rules.
   - `docs/journal/JOURNAL_INSTRUCTIONS.md` has updated granularity guidelines.
   - `spider-component-plan.md` has updated development notes.
+  - `README.md` is updated to reflect the focus on AI tooling experimentation.
 
 - **Taskmaster:**
   - Setup is functional after manual `tasks.json` creation.
@@ -136,6 +138,9 @@
 - **Committing Config Files:**
   - Committed Roo Code, Taskmaster, Cursor rules configurations.
 
+- **Journaling Process Refinement:**
+  - Based on user feedback, further refined the understanding of journal granularity. Specifically, explicit git actions (like individual commits or pushes) should not be listed as separate accomplishments unless they mark a very significant milestone or a decision point in themselves. The focus should remain on the substance of the work, with commits being an inherent part of that workflow rather than standalone reportable items.
+
 ### Today's Next Steps
 
 - Begin implementing Phase 1 of the statistics system refactoring plan
@@ -158,6 +163,7 @@
 - If continuing with existing plans, review `docs/STATISTICS_REFACTOR_PLAN.md` or the spider component plan.
 - Review the spider-component-plan.md document for detailed requirements and next implementation chunks
 - Plan for further UI/UX improvements and additional component integration
+- **Tomorrow's Plan:** Use `spider-component-plan.md` as input for Taskmaster to generate a PRD and corresponding tasks. Then, begin implementing the generated tasks for the spider component.
 
 ## 2025-05-11
 
