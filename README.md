@@ -1,115 +1,126 @@
-# Vibe Practice
+# Vibe Practice 🕸️🌈
 
 <div align="center">
-  <img src="public/Rainbow.png" alt="Rainbow" width="400" style="max-width: 100%; height: auto;"/>
+  <img src="public/Rainbow.png" alt="Rainbow Background" width="500" style="max-width: 100%; height: auto;"/>
 </div>
 
-A modern React application implementing DevOps best practices. This project showcases the integration of modern front-end development with solid DevOps principles.
+Welcome to Vibe Practice! This repository is primarily a **personal sandbox** for exploring and refining **modern AI-assisted development workflows**, particularly using **Cursor** and various **MCP server integrations**.
 
-**Primary Purpose**: This application was created specifically to experiment with and explore the capabilities of Cursor, the AI-powered code editor.
+**Primary Goals:**
 
-## Table of Contents
-- [Features](#features)
-- [Development Environment](#development-environment)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Available Scripts](#available-scripts)
-- [DevOps Features](#devops-features)
-- [Testing](#testing)
-- [Journal System](#journal-system)
-- [Project Structure](#project-structure)
+1.  **Explore AI Development Tools:** Deeply investigate the capabilities of **Cursor**, **Taskmaster-AI**, **Context7**, and **MCP Memory** within a practical development context.
+2.  **Refine AI Workflows:** Experiment with different approaches to planning, coding, testing, and documentation when heavily leveraging AI assistance.
+3.  **(Context):** Build a simple React 19/Vite application (the 'spider button' app) *as the testbed* for these explorations.
 
-## Features
+---
 
-- React 19 with Vite build system
-- Hot reloading for development
-- Health monitoring server
-- Graceful shutdown handling
-- Test-Driven Development (TDD) approach
-- DevOps-friendly configuration
-- Proper image aspect ratio preservation
-- Developer journal system with automated reminders
+## 🤔 What is This *Project* Really About?
 
-## Development Environment
+This repository serves as a living laboratory focused on:
+
+*   **Cursor Integration:** Pushing the boundaries of using Cursor for code generation, refactoring, rule adherence ([.cursor/rules](mdc:.cursor/rules/)), and overall development assistance.
+*   **MCP Server Experimentation:** Actively using and testing MCP server tools, specifically:
+    *   **Taskmaster-AI:** For AI-driven project planning, task breakdown, and status tracking ([tasks/tasks.json](mdc:tasks/tasks.json) - _Note: This file might be in `.gitignore`_). See [.cursor/rules/taskmaster.mdc](mdc:.cursor/rules/taskmaster.mdc).
+    *   **Context7:** For leveraging real-time documentation lookups during development.
+    *   **MCP Memory:** For storing and retrieving project context and preferences within the AI's knowledge graph.
+*   **Workflow Optimization:** Finding efficient and effective ways to combine these AI tools into a cohesive development process.
+*   **TDD with AI:** Exploring how Test-Driven Development interacts with AI-assisted coding.
+
+The simple React app (spider button, rainbow) exists mainly to provide concrete tasks and codebases for these AI tooling experiments.
+
+---
+
+## ✨ Key Aspects (Focus: AI Tooling)
+
+*   **AI-Driven Development:** Heavy reliance on Cursor, Taskmaster, Context7, and MCP Memory.
+*   **Custom AI Configuration:** Project-specific Cursor rules ([.cursor/rules/](mdc:.cursor/rules/)) and preferences ([docs/preferences.md](mdc:docs/preferences.md)) guide the AI.
+*   **Taskmaster Project Management:** Utilizing AI for task generation, expansion, and updates.
+*   **Contextual Documentation:** Using Context7 for library/framework information.
+*   **Test-Driven Development (TDD):** Core practice using Jest & React Testing Library, explored *alongside* AI tools.
+*   **DevOps Principles:** Basic health checks (`/server`), signal handling applied as relevant context.
+
+_(The project also includes an engineering journal system, primarily for logging experiments and observations during this process. See [docs/journal/JOURNAL_SYSTEM.md](mdc:docs/journal/JOURNAL_SYSTEM.md) for details.)_
+
+---
+
+## 🚀 Getting Started (If you *really* want to run it)
+
+This is mainly a personal exploration project, but if you want to run the React app testbed:
 
 ### Prerequisites
 
-- Node.js (LTS version recommended)
-- npm or yarn
-- Git
+*   Node.js (LTS version recommended)
+*   npm (comes with Node.js)
+*   Git
 
 ### Installation
 
 ```bash
-# Clone the repository
+# 1. Clone the repository
 git clone https://github.com/wiggitywhitney/vibe_practice.git
+
+# 2. Navigate into the project directory
 cd vibe_practice
 
-# Install dependencies
+# 3. Install dependencies
 npm install
 ```
 
-### Available Scripts
+### Running the App
 
 ```bash
-# Start the development server (port 8080)
+# Start the development server (usually on http://localhost:8080)
+npm run dev
+```
+
+---
+
+## 🛠️ Available Scripts
+
+_(These are standard Node/React scripts, plus some related to the experimental journal system)_
+
+```bash
+# Start the development server with hot reloading
 npm run dev
 
-# Run tests
+# Run the test suite once
 npm test
 
-# Run tests in watch mode
+# Run tests in interactive watch mode
 npm run test:watch
 
-# Start the health monitoring server
+# Start the separate health monitoring server
 npm run health
 
-# Trigger journal reminder manually
+# (For Journal System) Trigger a journal reminder manually
 npm run journal:remind
 
-# Generate weekly journal statistics
+# (For Journal System) Generate weekly journal statistics
 npm run journal:stats
 ```
 
-## DevOps Features
+---
 
-- **Standard Port**: Uses port 8080 instead of Vite's default 5173
-- **Health Monitoring**: Dedicated Express server for health checks
-- **Signal Handling**: Proper handling of SIGTERM and SIGINT signals
-- **Exit Codes**: Appropriate exit codes for success and failure states
-- **Container-Friendly**: Application designed with containerization in mind
+##  workflow Development Workflow Under Test
 
-## Testing
+The core idea is to test an AI-centric workflow:
 
-This project uses Jest and React Testing Library for testing. We follow a Test-Driven Development (TDD) approach:
+1.  **Planning (Taskmaster):** Define goals and let Taskmaster generate/manage tasks.
+2.  **TDD:** Write tests first (Jest/RTL).
+3.  **Implementation (Cursor):** Use Cursor heavily for coding, refactoring, following rules, potentially using Context7 for info.
+4.  **Verification:** Run tests, visual checks.
+5.  **Logging (Journal):** Document findings, especially regarding the AI tools and workflow.
+6.  **Iteration (Taskmaster/Cursor):** Update tasks based on discoveries, refine code.
 
-1. Write tests first
-2. Implement the minimum code required to pass the tests
-3. Refactor while keeping tests passing
+See [Development Workflow](mdc:.cursor/rules/dev_workflow.mdc) and [Taskmaster Rules](mdc:.cursor/rules/taskmaster.mdc) for the specific process being tested.
 
-## Journal System
+---
 
-The project includes an automated developer journal system that:
+## 📚 Key Files for Understanding the *Experiment*
 
-- Provides terminal-based daily journal reminders at 5pm
-- Uses git commit history to suggest journal content
-- Integrates with Cursor AI to generate properly formatted entries
-- Documents technical decisions with reasoning and alternatives
-- Uses thematic organization for improved readability
-- Runs in terminal only without system notifications
-- Generates weekly development statistics on Monday mornings
+*   **Cursor Rules & Preferences:** [.cursor/rules/](mdc:.cursor/rules/), [docs/preferences.md](mdc:docs/preferences.md)
+*   **Taskmaster Integration:** [.cursor/rules/taskmaster.mdc](mdc:.cursor/rules/taskmaster.mdc)
+*   **Workflow Documentation:** [.cursor/rules/dev_workflow.mdc](mdc:.cursor/rules/dev_workflow.mdc)
+*   **Experiment Logbook:** [docs/journal/engineering-journal.md](mdc:docs/journal/engineering-journal.md)
 
-For detailed setup and usage instructions, see [JOURNAL_SYSTEM.md](./docs/journal/JOURNAL_SYSTEM.md).
-
-## Project Structure
-
-- `/src`: React application source code
-  - `/src/components`: React components
-  - `/src/__tests__`: Test files
-- `/public`: Static assets including images
-- `/server`: Health monitoring server
-- `/docs`: Project documentation
-  - `/docs/journal`: Journal system documentation
-  - `/docs/preferences.md`: Development preferences and guidelines
-- `/scripts`: Utility scripts
-  - `/scripts/hooks`: Pre-commit hook for preferences date updates
+Happy experimenting! 🕷️
