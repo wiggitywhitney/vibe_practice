@@ -2,6 +2,13 @@
 
 ### Accomplishments
 
+- **Journal System Improvements:**
+  - Created a comprehensive refactoring plan for the journal statistics system
+  - Identified key issues with current statistics implementation
+  - Designed a solution that separates statistics from daily entries
+  - Established clear goals and execution phases
+  - Documented the plan in `docs/STATISTICS_REFACTOR_PLAN.md`
+
 - **Component Development:**
   - Refactored the rainbow background from a CSS/HTML background image to a dedicated `Rainbow` React component that renders the PNG image.
   - Integrated the `Rainbow` component into the app and visually verified its appearance.
@@ -22,6 +29,12 @@
 
 ### Current State
 
+- **Journal System Status:**
+  - Statistics refactoring plan is documented and ready for implementation
+  - Plan addresses key issues with current statistics system
+  - Clear separation of concerns between daily entries and statistics
+  - Ready to begin implementation of new statistics system
+
 - **Component Status:**
   - The Rainbow component is now responsible for rendering the rainbow image.
   - The AddSpiderButton is larger and positioned within the rainbow layout container, but its alignment with the left cloud is not yet correct.
@@ -37,6 +50,12 @@
   - The AddSpiderButton is not yet visually aligned with the left cloud; further adjustments are needed.
 
 ### Technical Decisions
+
+- **Statistics System Refactoring:**
+  - Chose to separate statistics entries into their own file to preserve daily journal functionality
+  - Decided to follow the same AI-assisted pattern as the daily journal system
+  - Selected a phased implementation approach to manage complexity
+  - Trade-off: More files to manage, but better separation of concerns and preserved functionality
 
 - **Rainbow Refactor:**  
   - Chose to replace the CSS/HTML background image with a React component to allow precise positioning of UI elements and improve maintainability.
@@ -57,9 +76,10 @@
 
 ### Today's Next Steps
 
-- Continue fine-tuning the AddSpiderButton's position and size for optimal alignment with the rainbow/cloud.
-- Reduce excess whitespace around the rainbow for a more compact and visually appealing layout.
-- Begin implementing the next chunk of the spider component plan (toggle functionality or spider display, as appropriate).
+- Begin implementing Phase 1 of the statistics system refactoring plan
+- Continue fine-tuning the AddSpiderButton's position and size for optimal alignment with the rainbow/cloud
+- Reduce excess whitespace around the rainbow for a more compact and visually appealing layout
+- Begin implementing the next chunk of the spider component plan (toggle functionality or spider display, as appropriate)
 
 ### Previous Next Steps
 
@@ -72,8 +92,9 @@
 
 ### Preparation for Next Session
 
-- Review the spider-component-plan.md document for detailed requirements and next implementation chunks.
-- Plan for further UI/UX improvements and additional component integration.
+- Review the statistics refactoring plan for implementation details
+- Review the spider-component-plan.md document for detailed requirements and next implementation chunks
+- Plan for further UI/UX improvements and additional component integration
 
 ## 2025-05-11
 
