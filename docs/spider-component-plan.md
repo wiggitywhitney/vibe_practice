@@ -1,5 +1,20 @@
 # Spider Component Implementation Plan
 
+## Development Notes (2025-05-12)
+- **Rainbow Image Refactor:**  
+  Decided to replace the CSS background-image approach with a dedicated `Rainbow` React component that renders the rainbow PNG as an `<img>`.  
+  - This change allows us to precisely position the AddSpiderButton relative to the rainbow/cloud using React and CSS.
+  - The rainbow image will be imported and rendered as a component, making future layout and interaction changes easier.
+  - The AddSpiderButton will be positioned within the same container as the Rainbow component for better alignment and responsiveness.
+  - **Planned styling changes for AddSpiderButton:**
+    - Position the button close to the left cloud of the rainbow image (not just the lower left corner of the screen).
+    - Increase the button size slightly for better visibility and usability.
+
+- **Next Steps:**  
+  1. Write a test for the Rainbow component to ensure it renders the image correctly.
+  2. Implement the Rainbow component in `src/components/Rainbow.jsx`.
+  3. Refactor App.jsx to use the Rainbow component and position AddSpiderButton accordingly.
+
 ## Requirements
 
 ### AddSpiderButton Component

@@ -57,3 +57,17 @@ h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   margin-bottom: 2rem;
 }
+
+.rainbow-layout {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rainbow-layout .add-spider-button {
+  position: absolute;
+  left: 5%;   /* Adjust this value to move closer/farther from the left cloud */
+  top: 65%;   /* Adjust this value to move up/down as needed */
+  transform: translateY(-50%);
+}

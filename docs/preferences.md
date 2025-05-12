@@ -22,6 +22,7 @@
 - Propose one change at a time and wait for my acceptance
 - Never implement multiple features at once without explicit approval
 - Break down larger tasks but wait for approval on each subtask
+- **When making code changes, only change one file at a time, but multiple changes within that file are allowed. Always explain the changes being made.**
 
 ## Terminal Commands
 - Provide copy buttons for all terminal commands
@@ -89,4 +90,4 @@
 - Verify image aspect ratios are preserved in all contexts
 - Explicitly mention when a trade-off is necessary that might conflict with preferences
 
-*Last updated: May 11, 2025* 
+*Last updated: May 12, 2025* 
