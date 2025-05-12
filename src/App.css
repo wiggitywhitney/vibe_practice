@@ -63,11 +63,20 @@ h1 {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rainbow-layout img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .rainbow-layout .add-spider-button {
   position: absolute;
-  left: 5%;   /* Adjust this value to move closer/farther from the left cloud */
-  top: 65%;   /* Adjust this value to move up/down as needed */
-  transform: translateY(-50%);
+  left: 5%;
+  bottom: 10%;
+  transform: none;
 }
