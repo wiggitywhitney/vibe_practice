@@ -12,13 +12,16 @@ BEFORE YOU START:
 - Review the most recent entry in engineering-journal.md for formatting and style
 - Copy the formatting style and detail level from the most recent entry
 - Review your terminal history to ensure ALL commands are documented
+- **If updating an existing entry for today, review the *entire* day's history (git log, terminal, chat) to ensure ALL relevant new information is captured.**
 
 THIS JOURNAL ENTRY MUST:
 - Document EVERY development activity for TODAY'S ACTUAL DATE ($TODAY, not tomorrow or any future date)
+- **Capture the essence** of ALL development activities for TODAY'S ACTUAL DATE ($TODAY, not tomorrow or any future date), applying the specified reporting granularity (see **Reporting Granularity Guidelines**).
 - If an entry for today already exists, UPDATE that entry instead of creating a new one
 - Follow EXACTLY the same structure as previous entries, with one exception: always include the Technical Decisions section even if previous entries don't have it
 - Be placed at the TOP of docs/journal/engineering-journal.md (create file if it doesn't exist)
 - Replace any existing entry for today while preserving all other entries
+- If an entry for today ($TODAY) already exists, **update and augment** that entry by adding any new information not already present. **Do not remove** existing content from today's entry. Preserve all entries from other dates.
 - Use natural, human-like language instead of technical jargon throughout the entire entry
 
 IMPORTANT: Never create entries for future dates. Always use the current date ($TODAY) and update the existing entry if one exists for today.
@@ -31,6 +34,21 @@ REQUIRED SECTION HEADERS (use these EXACT headers):
 ### Today's Next Steps
 ### Previous Next Steps
 ### Preparation for Next Session
+
+**REPORTING GRANULARITY GUIDELINES:**
+
+- **Report different types of activities with varying levels of detail:**
+    - **High Granularity (Application Changes):** Document changes directly related to the application's features, UI, core logic, tests, and components in detail, as currently described in the Accomplishments/Current State guidelines. Include specific files, functions, or UI elements involved.
+        - *Example:* "Added state management to `UserProfile.jsx` to handle avatar uploads."
+        - *Example:* "Fixed bug in `calculateTotal` function within `CartService.js`."
+    - **Medium Granularity (Journal System Changes):** Describe modifications to the journal system itself (instructions, scripts, statistics) with moderate detail. Mention the specific changes made but avoid excessive technical specifics unless crucial.
+        - *Example:* "Updated journal instructions to clarify granularity requirements."
+        - *Example:* "Refactored the journal reminder script for better date handling."
+    - **High-Level Overview (Structure, Git, Tools, Config):** Summarize changes related to project structure, organization, Git history (commits, branching), adding/configuring new tools (linters, build tools, MCP servers), environment setup, and general configuration files concisely. Focus on the outcome or purpose rather than step-by-step details.
+        - *Example:* "Reorganized `src/utils` directory for better clarity."
+        - *Example:* "Committed several configuration files after project audit."
+        - *Example:* "Initialized and configured the Taskmaster MCP server."
+        - *Example:* "Cleaned up unused files from the `scripts/` directory."
 
 ACCOMPLISHMENTS SECTION GUIDELINES:
 - Group accomplishments by theme or area of work (e.g., "Component Development", "Documentation", "Testing")
@@ -69,6 +87,7 @@ CONTENT REQUIREMENTS (repeat these checks multiple times):
 ✓ Avoid technical jargon where simpler explanations would work better
 ✓ Include ALL development activities from today (do NOT include verbatim commit messages or phrases like "Commit:" or "Earlier commit:")
 ✓ Describe ALL activities in natural language without referencing specific commits
+✓ Describe the **essence** of ALL development activities from today, applying the appropriate **Reporting Granularity Guidelines**.
 ✓ Group and organize activities thematically according to the Accomplishments Section Guidelines
 ✓ Structure the Current State section thematically according to the Current State Section Guidelines
 ✓ Include ALL journal system changes (if any were made)
@@ -119,6 +138,7 @@ NEXT STEPS SECTION REQUIREMENTS:
 REQUIRED CHECKLIST (verify EACH item):
 - [ ] Included ALL journal system changes (if any)
 - [ ] Included all git commits with their messages
+- [ ] Ensured all activities reflected in git commits are described in natural language **according to the Reporting Granularity Guidelines**.
 - [ ] Grouped accomplishments thematically with clear headings
 - [ ] Used natural, human-like language where possible
 - [ ] Organized Current State section thematically with clear status updates
@@ -127,6 +147,7 @@ REQUIRED CHECKLIST (verify EACH item):
 - [ ] Included changes to development process
 - [ ] Added Technical Decisions section with rationales for key choices
 - [ ] Verified all Technical Decisions are based ONLY on evidence, with NO speculation about alternatives not discussed
+- [ ] Applied the correct level of detail according to the **Reporting Granularity Guidelines**.
 - [ ] Used two separate Next Steps sections correctly
 - [ ] Added appropriate date tags to Previous Next Steps items
 - [ ] Sorted Previous Next Steps from newest to oldest
