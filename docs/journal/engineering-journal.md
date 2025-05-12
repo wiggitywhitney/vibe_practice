@@ -8,14 +8,16 @@
   - Designed a solution that separates statistics from daily entries
   - Established clear goals and execution phases
   - Documented the plan in `docs/STATISTICS_REFACTOR_PLAN.md`
+  - Refined journal instructions (`docs/journal/JOURNAL_INSTRUCTIONS.md`) for clarity and granularity (committed later in the day).
 
-- **Component Development:**
+- **Component Development & Refactoring:**
   - Refactored the rainbow background from a CSS/HTML background image to a dedicated `Rainbow` React component that renders the PNG image.
   - Integrated the `Rainbow` component into the app and visually verified its appearance.
   - Adjusted the layout to wrap the rainbow and AddSpiderButton in a new container for better positioning.
   - Increased the size of the AddSpiderButton for improved visibility.
   - Removed the old `.lower-left` positioning and set up the button for relative positioning within the new layout.
   - Iteratively adjusted CSS to begin improving the button's alignment with the left cloud.
+  - Restored desired absolute positioning styles for the `.add-spider-button` in `src/App.css` after troubleshooting (committed later).
 
 - **Testing:**
   - Created a new test file for the Rainbow component to verify it renders the image with the correct `src` and `alt` attributes.
@@ -24,10 +26,46 @@
 
 - **Documentation & Process:**
   - Updated `spider-component-plan.md` with a Development Notes section to document the rainbow refactor and button styling changes.
-  - Updated `preferences.md` to clarify the workflow: only one file should be changed at a time, but multiple changes per file are allowed, and each change should be explained.
-  - Used git best practices: staged and committed code and asset changes in logical, separate commits.
+  - Updated `docs/preferences.md` to refine development process (granularity, numbering, approval) and terminal command (auto-run) rules.
+  - Refined journal instructions (`docs/journal/JOURNAL_INSTRUCTIONS.md`) for clarity and granularity.
+
+- **Preferences & Memory Management:**
+  - Defined a list of key user preferences (excluding journaling) for storage in MCP memory.
+  - Added the finalized preferences (including rules for Context7 usage, Taskmaster verification steps, and sequential task adding) to the MCP knowledge graph under the "User Preferences" entity.
+  - Updated `memory.json` reflecting the MCP memory changes.
+
+- **Taskmaster Troubleshooting & Setup:**
+  - Diagnosed and resolved issues preventing Taskmaster tools (`add_task`) from recognizing the `tasks.json` file structure after initialization via MCP tools.
+  - Manually created `tasks/tasks.json` with the structure `{\"tasks\": []}` based on user intervention, allowing task creation to proceed.
+  - Created Taskmaster tasks (1-6) for the MCP memory update process.
+  - Marked Taskmaster tasks (1-6) as done and generated corresponding task files.
+
+- **Project Audit and Organization (Earlier Commits):**
+  - Conducted a comprehensive audit of project files and Git status.
+  - Updated `.gitignore` to exclude sensitive files (`.cursor/mcp.json`, `.env`) and Taskmaster files (`tasks.json`, `tasks/`). Removed trailing space.
+  - Committed necessary configuration files (`.taskmasterconfig`, `.cursor/rules/`, `memory.json`, `.roo/`, `.roomodes`).
+  - Fixed a syntax error in `.cursor/mcp.json`.
+
+- **Configuration & Tooling (Earlier Commits):**
+  - Added/Committed Taskmaster, Cursor rules, Memory, and Roo Code configurations.
 
 ### Current State
+
+- **MCP Memory:**
+  - Key user preferences (DevOps, Git, Dev Process, Terminal, UI/UX, Communication, Tooling rules) are stored in the knowledge graph under "User Preferences".
+
+- **Documentation:**
+  - `docs/preferences.md` is updated with refined development process and terminal command rules.
+  - `docs/journal/JOURNAL_INSTRUCTIONS.md` has updated granularity guidelines.
+  - `spider-component-plan.md` has updated development notes.
+
+- **Taskmaster:**
+  - Setup is functional after manual `tasks.json` creation.
+  - Tasks related to the memory update are complete.
+  - `tasks.json` and `tasks/` directory are correctly ignored by Git.
+
+- **Repository Status:**
+  - The Git working tree is clean and up-to-date with `origin/main`.
 
 - **Journal System Status:**
   - Statistics refactoring plan is documented and ready for implementation
@@ -37,7 +75,7 @@
 
 - **Component Status:**
   - The Rainbow component is now responsible for rendering the rainbow image.
-  - The AddSpiderButton is larger and positioned within the rainbow layout container, but its alignment with the left cloud is not yet correct.
+  - The AddSpiderButton is larger and positioned within the rainbow layout container, using restored absolute positioning styles.
   - All component tests are passing.
 
 - **Development Infrastructure:**
@@ -46,10 +84,28 @@
   - Preferences and component plan documentation are up to date.
 
 - **UI/UX:**
-  - The rainbow is displayed as a React component, but there is still excess whitespace around it.
-  - The AddSpiderButton is not yet visually aligned with the left cloud; further adjustments are needed.
+  - The rainbow is displayed as a React component.
+  - The AddSpiderButton alignment relative to the rainbow/cloud may still need fine-tuning.
+  - Potential excess whitespace around the rainbow remains.
 
 ### Technical Decisions
+
+- **MCP Memory Update Process:**
+  - Opted to store key preferences directly in MCP memory to ensure consistent application across sessions.
+  - Chose a collaborative approach, confirming the exact preference strings with the user before storage.
+  - Bypassed initially failing Taskmaster MCP tools by manually creating `tasks/tasks.json` based on user input, enabling subsequent Taskmaster operations.
+
+- **Preference Refinement (Development Process):**
+  - Differentiated interaction granularity based on task type (Application Code vs. Other Tasks) for better workflow efficiency.
+  - Mandated numbering for grouped changes to improve clarity during review.
+  - Clarified that approval is needed for application file changes, while info gathering is exempt.
+
+- **Preference Refinement (Terminal):**
+  - Updated preference to allow automatic execution of terminal commands by tools, removing previous restrictions.
+
+- **Preference Refinement (Tooling):**
+  - Added explicit preferences to always use Context7 for documentation lookups and to include verification steps in Taskmaster plans.
+  - Added preference to allow sequential Taskmaster task additions without individual confirmation after plan approval.
 
 - **Statistics System Refactoring:**
   - Chose to separate statistics entries into their own file to preserve daily journal functionality
@@ -63,8 +119,8 @@
   - Trade-off: Slightly more code, but much greater flexibility and clarity.
 
 - **Button Positioning:**  
-  - Decided to use a relatively positioned container and absolutely position the button within it for fine-grained control.
-  - Chose to remove the old `.lower-left` class and rely on the new layout for alignment.
+  - Decided to use a relatively positioned container and initially attempt absolute positioning within it.
+  - Later restored absolute positioning for `.add-spider-button` in `App.css` after troubleshooting layout issues.
   - Trade-off: Requires more CSS tuning, but results in a more robust and adaptable layout.
 
 - **Testing & Mocks:**  
@@ -73,6 +129,12 @@
 
 - **Process Documentation:**  
   - Updated preferences and component plan documentation to reflect the new workflow and design decisions, ensuring future work remains consistent and well-documented.
+
+- **Ignoring Files:**
+  - Added `.cursor/mcp.json` and Taskmaster files to `.gitignore`.
+
+- **Committing Config Files:**
+  - Committed Roo Code, Taskmaster, Cursor rules configurations.
 
 ### Today's Next Steps
 
@@ -92,7 +154,8 @@
 
 ### Preparation for Next Session
 
-- Review the statistics refactoring plan for implementation details
+- Review the current project state and identify the next major feature or refactoring task.
+- If continuing with existing plans, review `docs/STATISTICS_REFACTOR_PLAN.md` or the spider component plan.
 - Review the spider-component-plan.md document for detailed requirements and next implementation chunks
 - Plan for further UI/UX improvements and additional component integration
 

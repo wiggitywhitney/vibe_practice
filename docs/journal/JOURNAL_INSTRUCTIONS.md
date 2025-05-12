@@ -37,17 +37,19 @@ REQUIRED SECTION HEADERS (use these EXACT headers):
 
 **REPORTING GRANULARITY GUIDELINES:**
 
-- **Report different types of activities with varying levels of detail:**
-    - **High Granularity (Application Changes):** Document changes directly related to the application's features, UI, core logic, tests, and components in detail, as currently described in the Accomplishments/Current State guidelines. Include specific files, functions, or UI elements involved.
+- **Summarize Thematically:** Group related activities under thematic headings (e.g., "Component Development", "Tooling Setup", "Documentation Updates").
+- **Vary Detail Levels:**
+    - **High Granularity (Application Changes):** Document changes directly related to the application's features, UI, core logic, tests, and components in detail. Include specific files, functions, or UI elements involved.
         - *Example:* "Added state management to `UserProfile.jsx` to handle avatar uploads."
         - *Example:* "Fixed bug in `calculateTotal` function within `CartService.js`."
     - **Medium Granularity (Journal System Changes):** Describe modifications to the journal system itself (instructions, scripts, statistics) with moderate detail. Mention the specific changes made but avoid excessive technical specifics unless crucial.
         - *Example:* "Updated journal instructions to clarify granularity requirements."
         - *Example:* "Refactored the journal reminder script for better date handling."
-    - **High-Level Overview (Structure, Git, Tools, Config):** Summarize changes related to project structure, organization, Git history (commits, branching), adding/configuring new tools (linters, build tools, MCP servers), environment setup, and general configuration files concisely. Focus on the outcome or purpose rather than step-by-step details.
+    - **Low Granularity (Structure, Git, Tools, Config, Setup, Troubleshooting):** Summarize changes related to project structure, organization, Git history (commits, branching), adding/configuring new tools, environment setup, configuration files, and general troubleshooting concisely. Focus on the outcome or purpose rather than step-by-step details. Avoid listing every minor configuration tweak or troubleshooting step.
         - *Example:* "Reorganized `src/utils` directory for better clarity."
         - *Example:* "Committed several configuration files after project audit."
         - *Example:* "Initialized and configured the Taskmaster MCP server."
+        - *Example:* "Resolved Taskmaster setup issues by manually creating `tasks.json`."
         - *Example:* "Cleaned up unused files from the `scripts/` directory."
 
 ACCOMPLISHMENTS SECTION GUIDELINES:
@@ -63,6 +65,7 @@ CURRENT STATE SECTION GUIDELINES:
 - Use bold headings for major categories (e.g., "Component Status", "Development Infrastructure", "System Status")
 - Provide a concise snapshot of where each aspect of the project stands
 - Focus on the current state, not how it got there (that belongs in Accomplishments)
+- **Repository Status:** Only include details about Git status (uncommitted changes, branch status relative to remote) if the working tree is *not* clean or *not* up-to-date with the remote origin. If clean and up-to-date, this subsection can be omitted.
 - Highlight what's working and what's pending
 - Keep descriptions brief and clear
 - Ensure consistency between themes in Accomplishments and Current State when possible
@@ -120,20 +123,21 @@ NEXT STEPS SECTION REQUIREMENTS:
    - NOT include date tags
    - Focus ONLY on immediate, agreed-upon actions
    - NEVER include speculative or possible future tasks
-   - When generating a new journal entry for a new date, review the most recent previous entry. Copy all uncompleted items from that entry's "Today's Next Steps" section into the new entry's "Previous Next Steps" section, adding a date tag (e.g., "(from MM-DD)") using the previous entry's date. Do not include items that were completed.
+   - **Starting a New Day:** When starting a new journal entry for a new date ($TODAY), review the most recent previous entry. Copy all items from that *previous* entry's "Today's Next Steps" section into the *new* entry's "Previous Next Steps" section. Add a date tag `(from YYYY-MM-DD)` to each copied item, using the date of the *previous* entry. Only copy items that were not completed.
 
 2. "Previous Next Steps" section must:
-   - Include ALL uncompleted items from previous entries
-   - If in doubt about whether an item is completed, include it (err on the side of inclusion)
-   - Add date tags to EACH item (format: "(from MM-DD)" where MM-DD is the actual date with leading zeros, e.g., "05-01")
-   - For items without existing date tags, use the date of the entry where they appeared
-   - Sort from newest to oldest by date tag (most recent dates first)
-   - If you find duplicate/similar items from different dates, consolidate them and use the most recent date
-   - Count each calendar date as one journal entry (even if updated multiple times that day)
-   - Add [Old] flag BEFORE items that are 8+ journal entries old (example: "[Old] Create user authentication (from 04-15)")
-   - Start counting age from when the item first appeared in any Next Steps section
-   - REMOVE any item over 10 journal entries old
-   - Check the Accomplishments section of recent entries to determine if items have been implemented
+   - Include ALL uncompleted items from previous entries' "Today's Next Steps" sections.
+   - If in doubt about whether an item is completed, include it (err on the side of inclusion).
+   - Add date tags to EACH item (`(from YYYY-MM-DD)` format, using the date of the entry where the item was originally listed as a "Today's Next Step").
+   - **CRITICAL: Preserve Existing Date Tags:** If an item already has a date tag when moved from a previous day's "Today's Next Steps", **DO NOT** remove, change, or rewrite that date tag. It must remain exactly as it was.
+   - For items without existing date tags (e.g., copied from older entries before date tags were used), use the date of the entry where they appeared.
+   - Sort from newest to oldest by date tag (most recent dates first).
+   - If you find duplicate/similar items from different dates, consolidate them and use the most recent date tag.
+   - Count each calendar date as one journal entry (even if updated multiple times that day).
+   - Add `[Old]` flag BEFORE items that are 8+ journal entries old (example: `[Old] Create user authentication (from 2025-04-15)`).
+   - Start counting age from when the item first appeared in any Next Steps section.
+   - REMOVE any item over 10 journal entries old.
+   - Check the Accomplishments section of recent entries to determine if items have been implemented.
 
 REQUIRED CHECKLIST (verify EACH item):
 - [ ] Included ALL journal system changes (if any)
