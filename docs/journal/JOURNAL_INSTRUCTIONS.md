@@ -170,13 +170,6 @@ REQUIRED CHECKLIST (verify EACH item):
 
 CRITICAL: Compare your proposed journal entry with yesterday's entry to ensure consistent formatting and completeness. IMPORTANT EXCEPTION: Always include the Technical Decisions section even if it doesn't exist in previous entries.
 
-AFTER COMPLETING THE ENTRY:
-Guide the user through the git process with these commands (DO NOT run them):
-   a. First show: git status
-   b. Then suggest: git add docs/journal/engineering-journal.md
-   c. Then suggest: git commit -m "Add journal entry for 2025-05-11" (substitute today's actual date)
-   d. Then suggest: git push
-
 Please be EXTREMELY thorough and follow EVERY instruction carefully.
 
 - **Updating Existing Entries for $TODAY:**
