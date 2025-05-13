@@ -1,0 +1,20 @@
+/* SurpriseSpider.css */
+.surprise-spider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically as well */
+  position: absolute;
+  top: 0; /* Align to the top of its relative container */
+  left: 0;
+  right: 0;
+  bottom: 0; /* Make it take full height of its relative container */
+  z-index: 10; /* Ensure it's above other elements like SpiderImage */
+  overflow: hidden; /* Prevent scrollbars if image is slightly larger due to rounding */
+}
+
+.surprise-spider-image {
+  max-width: 100%; /* Ensure image doesn't overflow its container horizontally */
+  max-height: 100%; /* Ensure image doesn't overflow its container vertically */
+  height: auto; /* Maintain aspect ratio if only width is set via style prop */
+  object-fit: contain; /* Ensures the entire image is visible within the container */
+} 
