@@ -1,5 +1,3 @@
---- COPY FROM HERE ---
-
 Please create an engineering journal entry for today.
 
 BEFORE YOU START:
@@ -120,21 +118,22 @@ TECHNICAL DECISIONS SECTION REQUIREMENTS:
 NEXT STEPS SECTION REQUIREMENTS:
 1. "Today's Next Steps" section must:
    - Include ONLY tasks EXPLICITLY discussed/agreed to today
+   - **Use Taskmaster tools (e.g., `next_task`, `get_tasks` --status=pending) to identify pending tasks that could be suitable for "Today's Next Steps". Confirm with the user if these tasks should be included.**
    - NOT include date tags
    - Focus ONLY on immediate, agreed-upon actions
    - NEVER include speculative or possible future tasks
-   - **Starting a New Day:** When starting a new journal entry for a new date ($TODAY), review the most recent previous entry. Copy all items from that *previous* entry's "Today's Next Steps" section into the *new* entry's "Previous Next Steps" section. Add a date tag `(from YYYY-MM-DD)` to each copied item, using the date of the *previous* entry. Only copy items that were not completed.
+   - **Starting a New Day:** When starting a new journal entry for a new date ($TODAY), review the most recent previous entry. Copy all items from that *previous* entry's "Today's Next Steps" section into the *new* entry's "Previous Next Steps" section. Add a date tag `(from MM-DD)` to each copied item, using the date of the *previous* entry. Only copy items that were not completed.
 
 2. "Previous Next Steps" section must:
    - Include ALL uncompleted items from previous entries' "Today's Next Steps" sections.
    - If in doubt about whether an item is completed, include it (err on the side of inclusion).
-   - Add date tags to EACH item (`(from YYYY-MM-DD)` format, using the date of the entry where the item was originally listed as a "Today's Next Step").
+   - Add date tags to EACH item (`(from MM-DD)` format, using the date of the entry where the item was originally listed as a "Today's Next Step").
    - **CRITICAL: Preserve Existing Date Tags:** If an item already has a date tag when moved from a previous day's "Today's Next Steps", **DO NOT** remove, change, or rewrite that date tag. It must remain exactly as it was.
    - For items without existing date tags (e.g., copied from older entries before date tags were used), use the date of the entry where they appeared.
    - Sort from newest to oldest by date tag (most recent dates first).
    - If you find duplicate/similar items from different dates, consolidate them and use the most recent date tag.
    - Count each calendar date as one journal entry (even if updated multiple times that day).
-   - Add `[Old]` flag BEFORE items that are 8+ journal entries old (example: `[Old] Create user authentication (from 2025-04-15)`).
+   - Add `[Old]` flag BEFORE items that are 8+ journal entries old (example: `[Old] Create user authentication (from 04-15)`).
    - Start counting age from when the item first appeared in any Next Steps section.
    - REMOVE any item over 10 journal entries old.
    - Check the Accomplishments section of recent entries to determine if items have been implemented.
@@ -169,5 +168,3 @@ Guide the user through the git process with these commands (DO NOT run them):
    d. Then suggest: git push
 
 Please be EXTREMELY thorough and follow EVERY instruction carefully.
-
---- TO HERE --- 
