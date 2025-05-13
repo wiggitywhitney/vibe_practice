@@ -2,37 +2,80 @@
 
 ### Accomplishments
 
-- **Component Styling and Presentation:**
-  - Iteratively adjusted CSS properties for the `AddSpiderButton` component to refine its visual presentation and ensure consistent placement within the application's user interface. These changes aimed to improve the overall look and feel and alignment with other page elements.
+- **Component Development & Refinement:**
+  - Implemented the `SpiderImage` component (`src/components/SpiderImage.jsx`, `src/components/SpiderImage.css`) and its corresponding tests (`src/__tests__/components/SpiderImage.test.jsx`), ensuring correct rendering, styling, and responsive behavior based on the `rainbowWidth` prop. The TDD process was followed, with tests created first, then the component implementation to make them pass.
+  - Updated the `AddSpiderButton` component (`src/components/AddSpiderButton.jsx`) to correctly implement toggle functionality, displaying "Add spider?" or "Remove spider?" based on the `isSpiderPresent` prop. Associated tests in `src/__tests__/components/AddSpiderButton.test.jsx` were updated to cover this new behavior and ensure proper click handling. The component structure was also refined to include a container `div` (`add-spider-container`) and iterative CSS adjustments were made to ensure correct application of positioning styles defined in `AddSpiderButton.css`, restoring its intended appearance and alignment.
+  - Created the `SurpriseSpider` component (`src/components/SurpriseSpider.jsx`, `src/components/SurpriseSpider.css`) along with its tests (`src/__tests__/components/SurpriseSpider.test.jsx`). This component displays a different spider image, styled to take the full width of its `rainbowWidth` prop.
+  - Modified the `Rainbow` component (`src/components/Rainbow.jsx`) to accept an `isSpiderPresent` prop and adjust its opacity to 75% when a spider is present, and 100% otherwise. This involved updating the component logic and its tests (`src/__tests__/components/Rainbow.test.jsx`). A new CSS file (`src/components/Rainbow.css`) was created and imported to support its styling.
+  - Resolved various import and rendering issues, such as ensuring `AddSpiderButton` was imported as a default export in `App.jsx` and creating `Rainbow.css` when it was missing.
+
+- **Testing Infrastructure & Process:**
+  - Standardized the location for component tests to `src/__tests__/components/`. This involved moving `SpiderImage.test.jsx` and ensuring future component tests follow this convention.
+  - Updated Taskmaster tasks (Task 3: `SpiderImage`, Task 4: `SurpriseSpider`) to reflect the correct test file paths.
+
+- **Journaling Process & Documentation:**
+  - Further refined `docs/journal/JOURNAL_INSTRUCTIONS.md` to provide more explicit guidance on several key aspects of the journaling process. This included:
+    - Emphasizing the requirement to *augment* existing entries for the current day rather than completely replacing them, to ensure all prior details and nuances are preserved while integrating new information.
+    - Clarifying the conditional inclusion of the "Repository Status" subsection: it should only be present if `git status` indicates uncommitted changes or a divergence from the remote branch, and omitted entirely otherwise.
+  - Iteratively updated the journal entry for `2025-05-13` based on these refined instructions, focusing on correctly applying the augmentation and "Repository Status" rules.
+  - Previously, `docs/journal/JOURNAL_INSTRUCTIONS.md` was updated to include a rule for using Taskmaster to help populate the "Today's Next Steps" section.
 
 - **Knowledge Management & AI Tooling:**
   - Updated the project's internal knowledge graph, likely within `memory.json` or a similar system, by incorporating specific strategies and guidelines designed to prevent AI tools from generating inaccurate or misleading information. These "anti-hallucination" measures are intended to enhance the reliability and trustworthiness of AI-assisted development processes within the project.
 
 ### Current State
 
-- **Component Development:**
-  - The `AddSpiderButton` component has received targeted styling and positioning adjustments, leading to an improved visual state.
+- **Component Status:**
+  - `SpiderImage`: Implemented and tested. Displays correctly.
+  - `AddSpiderButton`: Toggle functionality implemented and tested. Styling and positioning are correct.
+  - `SurpriseSpider`: Implemented and tested. Displays correctly.
+  - `Rainbow`: Opacity modification based on `isSpiderPresent` prop is implemented and tested. Associated CSS file created.
+  - All component tests are passing.
+  - The application renders correctly in the browser, displaying the rainbow and the "Add spider?" button.
+
+- **Testing Infrastructure:**
+  - Test file locations are standardized under `src/__tests__/components/`.
+
+- **Documentation:**
+  - `JOURNAL_INSTRUCTIONS.md` has been significantly updated with more explicit rules, particularly concerning how to handle updates to existing daily entries (favoring augmentation over replacement) and the conditions for including or omitting the "Repository Status" section.
+
 - **Knowledge Management:**
   - The project's internal knowledge base for AI tooling now includes enhanced anti-hallucination guidelines.
 
+- **Repository Status:**
+  - The following files are modified and uncommitted:
+    - `docs/journal/JOURNAL_INSTRUCTIONS.md`
+    - `docs/journal/engineering-journal.md`
+
 ### Technical Decisions
 
-- **Styling and Positioning Refinements:**
-  - The modifications to the `AddSpiderButton`'s CSS were part of an iterative refinement process. The specific changes were aimed at achieving better visual harmony and alignment within the existing layout, based on ongoing development and UI/UX considerations. No major alternative architectural approaches for styling were documented as being considered for these specific incremental changes.
+- **Test File Organization:**
+  - Decided to centralize component tests within `src/__tests__/components/` rather than co-locating them directly with components (e.g., `src/components/__tests__/`) or in a single top-level `src/__tests__/` directory. This was chosen to maintain a clear separation between source code and test code while still grouping tests by their relevant component, aiming for a balance between organization and ease of navigation. Future component-related tasks were updated to reflect this structure.
+
+- **Styling Restoration for `AddSpiderButton`:**
+  - The `AddSpiderButton` component was modified to include an outer `div` with the class `add-spider-container`, and CSS was iteratively refined. This was done because the CSS rules for positioning (e.g., `position: absolute`) were defined on this container class and needed adjustment for visual harmony. Without the `div` and these specific styles in the component's JSX and CSS, the button was not being positioned as intended. This change restored and refined the visual layout.
+
+- **Resolving Blank Screen Issue:**
+  - Investigated a blank screen error by first checking for CSS import issues, then by examining the browser console. The console revealed a `SyntaxError` due to an incorrect named import of `AddSpiderButton` in `App.jsx`. Correcting this to a default import resolved the error and allowed the application to render.
+
+- **Journaling Instruction Refinement:**
+  - Based on iterative feedback, the decision was made to make the rules in `JOURNAL_INSTRUCTIONS.md` highly explicit, particularly concerning how to handle updates to existing daily entries (favoring augmentation over replacement) and the conditions for including or omitting the "Repository Status" section. This aims to reduce ambiguity and improve the consistency of journal entries.
+
 - **Knowledge Graph Enhancement:**
   - The addition of anti-hallucination strategies to the knowledge graph was a proactive step to improve the quality of AI-generated outputs. This decision reflects a focus on ensuring the reliability of AI tools used in the development workflow, rather than exploring alternative knowledge management systems at this juncture.
 
 ### Today's Next Steps
 
-- Implement `AddSpiderButton` Toggle Functionality as per `task_001.txt`.
+- Begin work on Task 6: Create Random Spider Selection Utility (`src/utils/spiderUtils.js` and `src/utils/__tests__/spiderUtils.test.js`)
 
 ### Previous Next Steps
 
+- Implement `AddSpiderButton` Toggle Functionality as per `task_001.txt` (from 05-13) - *Completed today*
 - Begin implementing Phase 1 of the statistics system refactoring plan (from 05-12)
-- Continue fine-tuning the AddSpiderButton's position and size for optimal alignment with the rainbow/cloud (from 05-12)
+- Continue fine-tuning the AddSpiderButton's position and size for optimal alignment with the rainbow/cloud (from 05-12) - *Addressed today as part of toggle implementation and styling refinements*
 - Reduce excess whitespace around the rainbow for a more compact and visually appealing layout (from 05-12)
-- Begin implementing the next chunk of the spider component plan (toggle functionality or spider display, as appropriate) (from 05-12)
-- Implement Chunk 3: Toggle functionality between "Add spider?" and "Remove spider?" (from 05-11)
+- Begin implementing the next chunk of the spider component plan (toggle functionality or spider display, as appropriate) (from 05-12) - *Addressed today*
+- Implement Chunk 3: Toggle functionality between "Add spider?" and "Remove spider?" (from 05-11) - *Completed today as part of Task 2 / AddSpiderButton toggle work*
 - Continue the chunked implementation approach following the plan document (from 05-11)
 - Explore potential for public blog generation from journal entries (from 05-10)
 - Add more React components to enhance the UI (from 05-10)
@@ -41,13 +84,10 @@
 
 ### Preparation for Next Session
 
-- Review the requirements in `task_001.txt` for the `AddSpiderButton` toggle functionality.
-- Before beginning work on 'Implement `AddSpiderButton` Toggle Functionality as per `task_001.txt`', use Taskmaster to check the status of this task. You can use `get_task --id <ID_if_known>` or review the general task list with `get_tasks`.
-- Consult the `spider-component-plan.md` for broader context on the component's development.
-- Ensure all necessary assets and dependencies for implementing the toggle feature are available.
-- If continuing with other existing plans after the toggle functionality, review `docs/STATISTICS_REFACTOR_PLAN.md`.
-- **Tomorrow's Plan (if toggle functionality is completed):** Use `spider-component-plan.md` as input for Taskmaster to generate a PRD and corresponding tasks for subsequent spider component features.
-
+- Review Task 6 details: Create Random Spider Selection Utility.
+- Prepare to create `src/utils/spiderUtils.js` and its corresponding test file `src/utils/__tests__/spiderUtils.test.js`.
+- Understand the requirements for the `selectSpiderType` function, including the 15% probability for the 'surprise' spider and the use of `Math.random()`.
+- Plan the test cases, including how to mock `Math.random()` for deterministic testing.
 
 ## 05-12
 

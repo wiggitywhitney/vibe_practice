@@ -20,6 +20,13 @@ THIS JOURNAL ENTRY MUST:
 - Be placed at the TOP of docs/journal/engineering-journal.md (create file if it doesn't exist)
 - Replace any existing entry for today while preserving all other entries
 - If an entry for today ($TODAY) already exists, **update and augment** that entry by adding any new information not already present. **Do not remove** existing content from today's entry. Preserve all entries from other dates.
+  - **Updating Existing Entries for $TODAY (In More Detail):**
+    - When an entry for $TODAY already exists, your primary goal is to ADD new information.
+    - Read the existing content for $TODAY carefully.
+    - Identify accomplishments, decisions, or state changes from NEW activity (e.g., recent commits, new terminal commands, new chat discussion) that are NOT YET documented in the existing $TODAY entry.
+    - Integrate this NEW information thematically into the appropriate sections of the existing $TODAY entry.
+    - **DO NOT simply regenerate the entire day's entry from scratch if one already exists, as this risks losing nuances or specific phrasing from the original content. Focus on merging NEW information.**
+    - It is acceptable to rephrase or restructure parts of the existing entry for clarity or to better integrate new information, but the core facts and details from the original content for that day must be preserved.
 - Use natural, human-like language instead of technical jargon throughout the entire entry
 
 IMPORTANT: Never create entries for future dates. Always use the current date ($TODAY) and update the existing entry if one exists for today.
@@ -63,7 +70,10 @@ CURRENT STATE SECTION GUIDELINES:
 - Use bold headings for major categories (e.g., "Component Status", "Development Infrastructure", "System Status")
 - Provide a concise snapshot of where each aspect of the project stands
 - Focus on the current state, not how it got there (that belongs in Accomplishments)
-- **Repository Status:** Only include details about Git status (uncommitted changes, branch status relative to remote) if the working tree is *not* clean or *not* up-to-date with the remote origin. If clean and up-to-date, this subsection can be omitted.
+- **Repository Status:** 
+  - ONLY include this subsection if `git status` shows uncommitted changes OR the branch is not up-to-date with its remote.
+  - **CRITICAL: If `git status` reports the working tree is clean AND the branch is up-to-date, YOU MUST OMIT the ENTIRE "Repository Status" subsection (including its heading).**
+  - If included, detail uncommitted changes and branch status relative to remote.
 - Highlight what's working and what's pending
 - Keep descriptions brief and clear
 - Ensure consistency between themes in Accomplishments and Current State when possible
@@ -118,7 +128,7 @@ TECHNICAL DECISIONS SECTION REQUIREMENTS:
 NEXT STEPS SECTION REQUIREMENTS:
 1. "Today's Next Steps" section must:
    - Include ONLY tasks EXPLICITLY discussed/agreed to today
-   - **Use Taskmaster tools (e.g., `next_task`, `get_tasks` --status=pending) to identify pending tasks that could be suitable for "Today's Next Steps". Confirm with the user if these tasks should be included.**
+   - **Use Taskmaster tools (e.g., `next_task`, `get_tasks` --status=pending) to identify pending tasks that could be suitable for "Today's Next Steps".**
    - NOT include date tags
    - Focus ONLY on immediate, agreed-upon actions
    - NEVER include speculative or possible future tasks
@@ -168,3 +178,11 @@ Guide the user through the git process with these commands (DO NOT run them):
    d. Then suggest: git push
 
 Please be EXTREMELY thorough and follow EVERY instruction carefully.
+
+- **Updating Existing Entries for $TODAY:**
+  - When an entry for $TODAY already exists, your primary goal is to ADD new information.
+  - Read the existing content for $TODAY carefully.
+  - Identify accomplishments, decisions, or state changes from NEW activity (e.g., recent commits, new terminal commands, new chat discussion) that are NOT YET documented in the existing $TODAY entry.
+  - Integrate this NEW information thematically into the appropriate sections of the existing $TODAY entry.
+  - **DO NOT simply regenerate the entire day's entry from scratch if one already exists, as this risks losing nuances or specific phrasing from the original content. Focus on merging NEW information.**
+  - It is acceptable to rephrase or restructure parts of the existing entry for clarity or to better integrate new information, but the core facts and details from the original content for that day must be preserved.
