@@ -3,8 +3,10 @@ import './AddSpiderButton.css';
 
 export function AddSpiderButton() {
   return (
-    <button className="add-spider-button spider-font">
-      Add spider?
-    </button>
+    <div className="add-spider-container lower-left" data-testid="button-container">
+      <button className="add-spider-button">
+        Add spider?
+      </button>
+    </div>
   );
 } 

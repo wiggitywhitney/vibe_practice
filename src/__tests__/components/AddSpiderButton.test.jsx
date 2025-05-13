@@ -9,12 +9,12 @@ describe('AddSpiderButton - Rendering and Positioning', () => {
     expect(button).toHaveTextContent('Add spider?');
   });
 
-  test('is positioned in the lower left corner', () => {
+  test('is positioned correctly via container', () => {
     render(<AddSpiderButton />);
     const buttonContainer = screen.getByTestId('button-container');
     
-    // Check positioning by class
-    expect(buttonContainer).toHaveClass('lower-left');
+    // New approach uses a container div for positioning
+    expect(buttonContainer).toHaveClass('add-spider-container');
   });
 
   test('has correct styling (black text, white outline, white fill)', () => {
@@ -30,16 +30,16 @@ describe('AddSpiderButton - Rendering and Positioning', () => {
   });
 });
 
-// New test block for Chunk 2: Font Integration
+// Updated test block for Chunk 2: Font Integration
 describe('AddSpiderButton - Font Integration', () => {
   test('uses custom spider font', () => {
     render(<AddSpiderButton />);
     const button = screen.getByRole('button');
     
-    // Check that the button has the class that will apply the custom font
-    expect(button).toHaveClass('spider-font');
+    // New approach applies font directly in the add-spider-button class
+    expect(button).toHaveClass('add-spider-button');
     
     // Note: We can't test actual font rendering in Jest/JSDOM,
-    // but we can verify the class that will apply the font is present
+    // but we can verify the button has the class that will apply the font
   });
 }); 

@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -42,41 +42,37 @@
 }
 
 .app-container {
-  min-height: 100vh;
+  min-height: 95vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
+  padding-top: 1rem;
 }
 
 h1 {
   font-size: 3.5rem;
   color: white;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .rainbow-layout {
   position: relative;
-  width: 100%;
-  max-width: 900px;
+  width: 80%;
+  max-width: none;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 30px;
 }
 
 .rainbow-layout img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.rainbow-layout .add-spider-button {
-  position: absolute;
-  left: 5%;
-  bottom: 10%;
-  transform: none;
+  margin: 0;
 }
