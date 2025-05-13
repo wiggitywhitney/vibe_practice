@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import React from 'react';
 import './AddSpiderButton.css';
 
-export function AddSpiderButton() {
+const AddSpiderButton = ({ onClick, isSpiderPresent }) => {
   return (
-    <div className="add-spider-container lower-left" data-testid="button-container">
-      <button className="add-spider-button">
-        Add spider?
-      </button>
-    </div>
+    <button 
+      className="add-spider-button"
+      onClick={onClick}
+    >
+      {isSpiderPresent ? 'Remove spider?' : 'Add spider?'}
+    </button>
   );
-} 
+};
+
+export default AddSpiderButton; 
