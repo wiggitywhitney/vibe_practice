@@ -1,0 +1,16 @@
+/* Rainbow.css */
+
+/* Styles for the rainbow container and image */
+.rainbow-container {
+  width: 100%; /* Ensure it takes full available width */
+  display: flex; /* Used to help center the image if needed, or for layout */
+  justify-content: center; /* Center image if it's smaller than container */
+  align-items: center; /* Vertically center image */
+  position: relative; /* For potential absolute positioning of children if any */
+}
+
+.rainbow-image {
+  width: 100%; /* Make image responsive to container width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image */
+} 
