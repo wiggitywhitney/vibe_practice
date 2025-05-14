@@ -1,3 +1,66 @@
+## 2025-05-14
+
+### Accomplishments
+
+- **Task Completion & Testing:**
+    - Successfully created the `mockRandom` utility (Task 8) in `src/utils/testUtils.js`.
+    - Implemented Jest tests for `mockRandom` in `src/__tests__/utils/testUtils.test.js` and confirmed they pass.
+    - Successfully developed and finalized integration tests for Rainbow component opacity changes (Task 10) in `src/__tests__/RainbowOpacity.test.jsx`. The process involved iterative debugging:
+        - Systematically identified and corrected import path errors for `App.jsx` and `testUtils.js` that initially prevented tests from running.
+        - Resolved test failures by refining DOM element selectors for opacity checks, correctly targeting `.rainbow-container` where styles were applied, instead of `.rainbow-image`.
+        - Further enhanced test robustness by incorporating `toBeInTheDocument` assertions.
+    - Marked Task 8 and Task 10 as "done" in Taskmaster.
+
+- **Repository Maintenance:**
+    - Removed an empty and unused directory: `src/components/__tests__/`.
+    - Synced all changes related to Task 8 and Task 10 to the remote Git repository in separate, well-defined commits.
+
+- **Journal Refinement:**
+    - Consolidated the two previous `2025-05-13` entries in `docs/journal/engineering-journal.md` into a single, comprehensive entry, preserving all information and adhering to established formatting.
+
+### Current State
+
+- **Application Functionality:**
+    - The `mockRandom` utility is available for deterministic testing.
+    - Tests for Rainbow component opacity are implemented and passing, verifying its dynamic behavior.
+- **Task Management:**
+    - Task 8 (Create `mockRandom` Test Utility) is "done".
+    - Task 10 (Test Rainbow Opacity Integration) is "done".
+    - The next suggested task is Task 9 (Write Integration Tests for Spider Display Logic).
+- **Repository Status:**
+    - The following file is modified and uncommitted:
+        - `docs/journal/engineering-journal.md` (due to 2025-05-13 entry consolidation and this new entry)
+    - All other changes from today's session have been committed and pushed.
+
+### Technical Decisions
+
+- **Test Utility Implementation (Task 8):**
+    - Created `mockRandom` in `src/utils/testUtils.js` as specified, enabling controlled testing of random behaviors.
+- **Opacity Test Refinement (Task 10):**
+    - Switched from querying `.rainbow-image` to `.rainbow-container` for opacity style checks in tests, as the style is applied to the container div. This resolved initial test failures.
+    - Added `expect(element).toBeInTheDocument()` assertions before style checks in `RainbowOpacity.test.jsx` for increased test robustness, ensuring elements exist before their styles are interrogated.
+- **Journal Consolidation:**
+    - Merged the two `2025-05-13` journal entries to maintain a clean and chronological record, ensuring all details from both versions were preserved under the correct headers.
+
+### Today's Next Steps
+
+- Commit the changes to `docs/journal/engineering-journal.md` (the 2025-05-13 merge and this new 2025-05-14 entry).
+- Begin work on Task 9: Write Integration Tests for Spider Display Logic.
+
+### Previous Next Steps
+
+- Begin work on Task 10: Test Rainbow Opacity Integration (from 2025-05-13) - *Completed today*
+- Begin implementing Phase 1 of the statistics system refactoring plan (from 05-12)
+- Explore potential for public blog generation from journal entries (from 05-10)
+- Add more React components to enhance the UI (from 05-10)
+- Implement test coverage reporting (from 05-10)
+
+### Preparation for Next Session
+
+- Review Task 9 details: Write Integration Tests for Spider Display Logic.
+- Prepare to create `src/__tests__/SpiderIntegration.test.jsx`.
+- Ensure `mockRandom` utility is correctly imported and used for these integration tests.
+
 ## 2025-05-13
 
 ### Accomplishments
@@ -9,9 +72,24 @@
   - Modified the `Rainbow` component (`src/components/Rainbow.jsx`) to accept an `isSpiderPresent` prop and adjust its opacity to 75% when a spider is present, and 100% otherwise. This involved updating the component logic and its tests (`src/__tests__/components/Rainbow.test.jsx`). A new CSS file (`src/components/Rainbow.css`) was created and imported to support its styling.
   - Resolved various import and rendering issues, such as ensuring `AddSpiderButton` was imported as a default export in `App.jsx` and creating `Rainbow.css` when it was missing.
 
+- **Application Integration & Refinement (Task 7):**
+  - Successfully integrated `SpiderImage` and `SurpriseSpider` components into `App.jsx`, ensuring conditional rendering based on `selectSpiderType` and correct passing of `rainbowWidth`.
+  - Resolved issues with `rainbowWidth` calculation by implementing `React.forwardRef` in the `Rainbow` component, allowing `App.jsx` to correctly obtain the Rainbow's `offsetWidth`. This fixed the bug where spiders were rendered with 0 width.
+  - Verified that `AddSpiderButton` correctly toggles spider visibility and updates its text.
+  - Confirmed that the `Rainbow` component's opacity changes as expected when a spider is present.
+  - Cleaned up debugging `console.log` statements from `App.jsx`, `SpiderImage.jsx`, and `SurpriseSpider.jsx`.
+  - All functional requirements for Task 7 (Implement Main App Component Integration) were completed and verified.
+
 - **Testing Infrastructure & Process:**
   - Standardized the location for component tests to `src/__tests__/components/`. This involved moving `SpiderImage.test.jsx` and ensuring future component tests follow this convention.
   - Updated Taskmaster tasks (Task 3: `SpiderImage`, Task 4: `SurpriseSpider`) to reflect the correct test file paths.
+
+- **Task Management:**
+  - Added a new task (Task 13: Refine `AddSpiderButton` styling) to address the button overlapping the `SurpriseSpider` image and to make its background transparent.
+  - Marked Task 7 as "done".
+
+- **Version Control:**
+  - Synced all changes related to Task 7 completion, Jest configuration, and new task addition to the remote repository. The commit message was: "feat: Complete app integration and add button styling task".
 
 - **Journaling Process & Documentation:**
   - Further refined `docs/journal/JOURNAL_INSTRUCTIONS.md` to provide more explicit guidance on several key aspects of the journaling process. This included:
@@ -25,7 +103,13 @@
 
 ### Current State
 
-- **Component Status:**
+- **Application Functionality:**
+  - The main application integrates all core components (`Rainbow`, `AddSpiderButton`, `SpiderImage`, `SurpriseSpider`).
+  - Spiders (both regular and surprise) are correctly rendered with appropriate sizes based on the rainbow's width.
+  - Rainbow opacity changes correctly based on spider visibility.
+  - Button text updates correctly.
+
+- **Component Status (from original entry, confirming alignment with Application Functionality):**
   - `SpiderImage`: Implemented and tested. Displays correctly.
   - `AddSpiderButton`: Toggle functionality implemented and tested. Styling and positioning are correct.
   - `SurpriseSpider`: Implemented and tested. Displays correctly.
@@ -36,16 +120,13 @@
 - **Testing Infrastructure:**
   - Test file locations are standardized under `src/__tests__/components/`.
 
+
 - **Documentation:**
   - `JOURNAL_INSTRUCTIONS.md` has been significantly updated with more explicit rules, particularly concerning how to handle updates to existing daily entries (favoring augmentation over replacement) and the conditions for including or omitting the "Repository Status" section.
 
 - **Knowledge Management:**
   - The project's internal knowledge base for AI tooling now includes enhanced anti-hallucination guidelines.
 
-- **Repository Status:**
-  - The following files are modified and uncommitted:
-    - `docs/journal/JOURNAL_INSTRUCTIONS.md`
-    - `docs/journal/engineering-journal.md`
 
 ### Technical Decisions
 
@@ -58,6 +139,9 @@
 - **Resolving Blank Screen Issue:**
   - Investigated a blank screen error by first checking for CSS import issues, then by examining the browser console. The console revealed a `SyntaxError` due to an incorrect named import of `AddSpiderButton` in `App.jsx`. Correcting this to a default import resolved the error and allowed the application to render.
 
+- **Ref Forwarding for `Rainbow` Component (from Augmented Entry):**
+  - Modified the `Rainbow` component to use `React.forwardRef`. This was critical to allow `App.jsx` to obtain a ref to the `Rainbow`'s underlying DOM element and accurately measure its `offsetWidth`. Without this, `rainbowWidth` was consistently `0` initially, preventing spider components from rendering with a visible size.
+
 - **Journaling Instruction Refinement:**
   - Based on iterative feedback, the decision was made to make the rules in `JOURNAL_INSTRUCTIONS.md` highly explicit, particularly concerning how to handle updates to existing daily entries (favoring augmentation over replacement) and the conditions for including or omitting the "Repository Status" section. This aims to reduce ambiguity and improve the consistency of journal entries.
 
@@ -66,28 +150,22 @@
 
 ### Today's Next Steps
 
-- Begin work on Task 6: Create Random Spider Selection Utility (`src/utils/spiderUtils.js` and `src/utils/__tests__/spiderUtils.test.js`)
+- Begin work on Task 10: Test Rainbow Opacity Integration.
 
 ### Previous Next Steps
 
-- Implement `AddSpiderButton` Toggle Functionality as per `task_001.txt` (from 05-13) - *Completed today*
 - Begin implementing Phase 1 of the statistics system refactoring plan (from 05-12)
-- Continue fine-tuning the AddSpiderButton's position and size for optimal alignment with the rainbow/cloud (from 05-12) - *Addressed today as part of toggle implementation and styling refinements*
-- Reduce excess whitespace around the rainbow for a more compact and visually appealing layout (from 05-12)
-- Begin implementing the next chunk of the spider component plan (toggle functionality or spider display, as appropriate) (from 05-12) - *Addressed today*
-- Implement Chunk 3: Toggle functionality between "Add spider?" and "Remove spider?" (from 05-11) - *Completed today as part of Task 2 / AddSpiderButton toggle work*
-- Continue the chunked implementation approach following the plan document (from 05-11)
 - Explore potential for public blog generation from journal entries (from 05-10)
 - Add more React components to enhance the UI (from 05-10)
 - Implement test coverage reporting (from 05-10)
-- Create a development roadmap with milestones (from 05-10)
+
 
 ### Preparation for Next Session
 
-- Review Task 6 details: Create Random Spider Selection Utility.
-- Prepare to create `src/utils/spiderUtils.js` and its corresponding test file `src/utils/__tests__/spiderUtils.test.js`.
-- Understand the requirements for the `selectSpiderType` function, including the 15% probability for the 'surprise' spider and the use of `Math.random()`.
-- Plan the test cases, including how to mock `Math.random()` for deterministic testing.
+- Review Task 10 details: Test Rainbow Opacity Integration.
+- Prepare to create `src/__tests__/RainbowOpacity.test.jsx`.
+- Understand the requirements for testing opacity changes in conjunction with `App.jsx`'s state and event handling.
+- Plan how to use the `mockRandom` utility (presumably from `../utils/testUtils`) to ensure deterministic testing of both regular and surprise spider scenarios.
 
 ## 05-12
 
@@ -402,55 +480,4 @@
 - Review the SpiderButton.test.jsx file to understand requirements
 - Familiarize with test-driven development approach being used in the project
 - Study existing components for code style and conventions
-- Explore React 19 features that could be leveraged in the project 
-
----
-*(Augmented Entry)*
-
-### Accomplishments
-
-- **Application Integration & Refinement (Task 7):**
-  - Successfully integrated `SpiderImage` and `SurpriseSpider` components into `App.jsx`, ensuring conditional rendering based on `selectSpiderType` and correct passing of `rainbowWidth`.
-  - Resolved issues with `rainbowWidth` calculation by implementing `React.forwardRef` in the `Rainbow` component, allowing `App.jsx` to correctly obtain the Rainbow's `offsetWidth`. This fixed the bug where spiders were rendered with 0 width.
-  - Verified that `AddSpiderButton` correctly toggles spider visibility and updates its text.
-  - Confirmed that the `Rainbow` component's opacity changes as expected when a spider is present.
-  - Cleaned up debugging `console.log` statements from `App.jsx`, `SpiderImage.jsx`, and `SurpriseSpider.jsx`.
-  - All functional requirements for Task 7 (Implement Main App Component Integration) were completed and verified.
-- **Task Management:**
-  - Added a new task (Task 13: Refine `AddSpiderButton` styling) to address the button overlapping the `SurpriseSpider` image and to make its background transparent.
-  - Marked Task 7 as "done".
-- **Version Control:**
-  - Synced all changes related to Task 7 completion, Jest configuration, and new task addition to the remote repository. The commit message was: "feat: Complete app integration and add button styling task".
-
-### Current State
-
-- **Application Functionality:**
-  - The main application integrates all core components (`Rainbow`, `AddSpiderButton`, `SpiderImage`, `SurpriseSpider`).
-  - Spiders (both regular and surprise) are correctly rendered with appropriate sizes based on the rainbow's width.
-  - Rainbow opacity changes correctly based on spider visibility.
-  - Button text updates correctly.
-- **Task Management:**
-  - Task 7 is complete.
-  - Task 13 (Refine `AddSpiderButton` styling) has been created and is pending.
-- **Repository Status:**
-  - The working tree is clean and the local branch is up to date with `origin/main`.
-
-### Technical Decisions
-
-- **Ref Forwarding for `Rainbow` Component:**
-  - Modified the `Rainbow` component to use `React.forwardRef`. This was critical to allow `App.jsx` to obtain a ref to the `Rainbow`'s underlying DOM element and accurately measure its `offsetWidth`. Without this, `rainbowWidth` was consistently `0` initially, preventing spider components from rendering with a visible size.
-
-### Today's Next Steps
-
-- Begin work on Task 10: Test Rainbow Opacity Integration.
-
-### Previous Next Steps
-
-- Begin work on Task 6: Create Random Spider Selection Utility (`src/utils/spiderUtils.js` and `src/utils/__tests__/spiderUtils.test.js`) (from 2025-05-13) - *Completed today*
-
-### Preparation for Next Session
-
-- Review Task 10 details: Test Rainbow Opacity Integration.
-- Prepare to create `src/__tests__/RainbowOpacity.test.jsx`.
-- Understand the requirements for testing opacity changes in conjunction with `App.jsx`'s state and event handling.
-- Plan how to use the `mockRandom` utility (presumably from `../utils/testUtils`) to ensure deterministic testing of both regular and surprise spider scenarios. 
+- Explore React 19 features that could be leveraged in the project
