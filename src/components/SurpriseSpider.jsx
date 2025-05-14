@@ -2,6 +2,7 @@ import React from 'react';
 import './SurpriseSpider.css';
 
 const SurpriseSpider = ({ rainbowWidth }) => {
+  // console.log('[SurpriseSpider.jsx] Received rainbowWidth:', rainbowWidth);
   // The image should take the full width of the rainbowWidth prop
   const imageStyle = {
     width: `${rainbowWidth}px`,

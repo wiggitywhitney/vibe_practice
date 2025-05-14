@@ -1,20 +1,20 @@
 import React, { useRef, useEffect, useState } from 'react';
 import './Rainbow.css'; // Assuming Rainbow.css exists or will be created
 
-const Rainbow = ({ isSpiderPresent }) => {
-  const rainbowRef = useRef(null);
-  // The task description mentions a 'width' state but doesn't use it in the provided JSX.
-  // We'll include it as per the description, assuming it might be used later or by other components.
+const Rainbow = React.forwardRef(({ isSpiderPresent }, ref) => {
+  // const rainbowRef = useRef(null); // No longer needed here if ref is from parent
   const [width, setWidth] = useState(0);
+  const internalImageRef = useRef(null); // Use a different ref for internal image width if needed
   
   useEffect(() => {
-    if (rainbowRef.current) {
-      setWidth(rainbowRef.current.offsetWidth);
+    // If we want to set an internal width state from the image itself
+    if (internalImageRef.current) {
+      setWidth(internalImageRef.current.offsetWidth);
     }
     
     const handleResize = () => {
-      if (rainbowRef.current) {
-        setWidth(rainbowRef.current.offsetWidth);
+      if (internalImageRef.current) {
+        setWidth(internalImageRef.current.offsetWidth);
       }
     };
     
@@ -25,11 +25,12 @@ const Rainbow = ({ isSpiderPresent }) => {
   return (
     // Ensure this div has the class 'rainbow-container' for tests to pass
     <div 
+      ref={ref} // Use the forwarded ref here
       className="rainbow-container" 
       style={{ opacity: isSpiderPresent ? 0.75 : 1 }}
     >
       <img 
-        ref={rainbowRef}
+        ref={internalImageRef} // If Rainbow needs its own ref to the img
         src="/Rainbow.png" // Using specific path from test
         alt="Rainbow"
         className="rainbow-image"
@@ -38,7 +39,7 @@ const Rainbow = ({ isSpiderPresent }) => {
       />
     </div>
   );
-};
+});
 
 // Exporting both default and named as per task description
 export default Rainbow;
