@@ -11,14 +11,15 @@
   bottom: -0px; /* Position much closer to rainbow */
   left: 25%;
   transform: translateX(-50%); /* Center under the left cloud */
-  z-index: 10;
+  z-index: 11; /* Increased from 10 for explicit layering */
 }
 
 .add-spider-button {
   padding: 10px 21px; /* Increased padding by ~30% */
   font-size: 31px;   /* Increased font size by ~30% from 24px */
   color: black;
-  background-color: white;
+  /* background-color: rgba(0,0,0,0); */ /* Explicitly using rgba for transparency */
+  background-color: white; /* Reverted to white background */
   border: 2px solid white;
   border-radius: 5px; /* Slightly increased for proportional scaling */
   cursor: pointer;
@@ -26,13 +27,28 @@
   white-space: nowrap; /* Ensure text stays on one line */
   /* Completely disable outlines */
   outline: none !important;
+  /* transition: background-color 0.3s ease; */ /* Removed transition */
 }
 
 .add-spider-button:hover, 
-.add-spider-button:focus {
+.add-spider-button:focus,
+.add-spider-button:active {
   outline: none !important;
   border-color: white !important;
-  box-shadow: none !important;
+  /* box-shadow: none !important; */ /* Changed to allow override */
+  box-shadow: none;
+}
+
+.black-outline {
+  box-shadow: 0 0 0 2px black;
+}
+
+/* Ensure black outline persists on hover/focus/active for the outlined button */
+.add-spider-button.black-outline:hover,
+.add-spider-button.black-outline:focus,
+.add-spider-button.black-outline:active {
+  box-shadow: 0 0 0 2px black; /* Maintain the black outline */
+  /* The border will still be white as per .add-spider-button:hover rules */
 }
 
 /* Class for test compatibility */

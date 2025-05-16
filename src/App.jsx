@@ -48,6 +48,8 @@ const App = () => {
     }
   };
   
+  const isSurpriseSpiderActive = spiderVisible && spiderType === 'surprise'; // Calculate prop value
+
   return (
     <div className="app-container">
       <div className="rainbow-layout">
@@ -67,6 +69,7 @@ const App = () => {
         <AddSpiderButton 
           onClick={handleSpiderButtonClick}
           isSpiderPresent={spiderVisible}
+          shouldHaveOutline={isSurpriseSpiderActive} // Pass the new prop
         />
       </div>
     </div>

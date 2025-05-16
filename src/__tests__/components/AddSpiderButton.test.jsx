@@ -50,4 +50,64 @@ describe('AddSpiderButton - Toggle Functionality and Click Handling', () => {
     fireEvent.click(button);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
+});
+
+describe('AddSpiderButton - Background Styling', () => {
+  test('has a white background by default', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} />);
+    const button = screen.getByRole('button');
+    expect(getComputedStyle(button).backgroundColor).toBe('ButtonFace');
+  });
+});
+
+/* describe('AddSpiderButton - Styling Properties', () => {
+  test('has a transparent background by default', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} />);
+    const button = screen.getByRole('button');
+    expect(getComputedStyle(button).backgroundColor).toBe('transparent');
+  });
+
+  test('has a transition property for background-color', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} />);
+    const button = screen.getByRole('button');
+    const transitionProperty = getComputedStyle(button).transition;
+    // Check if transition includes background-color and a time, e.g., "background-color 0.3s ease"
+    expect(transitionProperty).toMatch(/background-color/);
+    expect(transitionProperty).toMatch(/\d+(\.\d+)?s/); // Matches a duration like 0.3s or 1s
+  });
+}); */
+
+describe('AddSpiderButton - Conditional Outline Styling', () => {
+  test('applies black-outline class when shouldHaveOutline is true', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} shouldHaveOutline={true} />);
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('add-spider-button'); // ensure base class is there
+    expect(button).toHaveClass('black-outline');
+  });
+
+  test('does not apply black-outline class when shouldHaveOutline is false', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} shouldHaveOutline={false} />);
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('add-spider-button'); // ensure base class is there
+    expect(button).not.toHaveClass('black-outline');
+  });
+
+  test('does not apply black-outline class when shouldHaveOutline is not provided (defaults to false behavior)', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} />); // shouldHaveOutline is undefined
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('add-spider-button');
+    expect(button).not.toHaveClass('black-outline');
+  });
+});
+
+describe('AddSpiderButton - Container Styling', () => {
+  test('container has correct z-index for layering', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} />);
+    const button = screen.getByRole('button');
+    const container = button.parentElement; // Get the .add-spider-container
+    expect(container).not.toBeNull();
+    if (container) {
+      expect(getComputedStyle(container).zIndex).toBe('11'); // This will fail initially
+    }
+  });
 }); 

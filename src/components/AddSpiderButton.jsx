@@ -1,11 +1,16 @@
 import React from 'react';
 import './AddSpiderButton.css';
 
-const AddSpiderButton = ({ onClick, isSpiderPresent }) => {
+const AddSpiderButton = ({ onClick, isSpiderPresent, shouldHaveOutline }) => {
+  const buttonClasses = ['add-spider-button'];
+  if (shouldHaveOutline) {
+    buttonClasses.push('black-outline');
+  }
+
   return (
     <div className="add-spider-container lower-left"> 
       <button 
-        className="add-spider-button"
+        className={buttonClasses.join(' ')}
         onClick={onClick}
       >
         {isSpiderPresent ? 'Remove spider?' : 'Add spider?'}
