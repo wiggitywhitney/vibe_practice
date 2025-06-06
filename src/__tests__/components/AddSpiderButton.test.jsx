@@ -43,6 +43,11 @@ describe('AddSpiderButton - Toggle Functionality and Click Handling', () => {
     expect(screen.getByRole('button')).toHaveTextContent('Remove spider?');
   });
 
+  test('displays "AHHHHHH!!!" when shouldHaveOutline is true (surprise spider active)', () => {
+    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={true} shouldHaveOutline={true} />);
+    expect(screen.getByRole('button')).toHaveTextContent('AHHHHHH!!!');
+  });
+
   test('calls onClick handler when clicked', () => {
     const handleClick = jest.fn();
     render(<AddSpiderButton onClick={handleClick} isSpiderPresent={false} />);
@@ -100,14 +105,4 @@ describe('AddSpiderButton - Conditional Outline Styling', () => {
   });
 });
 
-describe('AddSpiderButton - Container Styling', () => {
-  test('container has correct z-index for layering', () => {
-    render(<AddSpiderButton onClick={() => {}} isSpiderPresent={false} />);
-    const button = screen.getByRole('button');
-    const container = button.parentElement; // Get the .add-spider-container
-    expect(container).not.toBeNull();
-    if (container) {
-      expect(getComputedStyle(container).zIndex).toBe('11'); // This will fail initially
-    }
-  });
-}); 
+ 

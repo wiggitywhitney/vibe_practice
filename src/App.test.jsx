@@ -17,11 +17,22 @@ beforeAll(async () => {
 
 // Mock child components to isolate App component logic
 jest.mock('./components/Rainbow', () => () => <div data-testid="rainbow">Rainbow</div>);
-jest.mock('./components/AddSpiderButton', () => ({ onClick, isSpiderPresent }) => (
-  <button data-testid="add-spider-button" onClick={onClick}>
-    {isSpiderPresent ? 'Remove Spider' : 'Add Spider'}
-  </button>
-));
+jest.mock('./components/AddSpiderButton', () => ({ onClick, isSpiderPresent, shouldHaveOutline }) => {
+  let buttonText;
+  if (shouldHaveOutline) {
+    buttonText = 'AHHHHHH!!!';
+  } else if (isSpiderPresent) {
+    buttonText = 'Remove Spider';
+  } else {
+    buttonText = 'Add Spider';
+  }
+  
+  return (
+    <button data-testid="add-spider-button" onClick={onClick}>
+      {buttonText}
+    </button>
+  );
+});
 jest.mock('./components/SpiderImage', () => () => <div data-testid="spider-image">Regular Spider</div>);
 jest.mock('./components/SurpriseSpider', () => () => <div data-testid="surprise-spider">Surprise Spider</div>);
 
@@ -80,6 +91,17 @@ describe('App Component', () => {
 
     expect(await screen.findByTestId('surprise-spider')).toBeInTheDocument();
     expect(screen.queryByTestId('spider-image')).not.toBeInTheDocument();
+  });
+
+  test('4b. button shows "AHHHHHH!!!" when surprise spider is active', async () => {
+    mockSelectSpiderType.mockReturnValueOnce('surprise');
+    render(<App />);
+    const button = screen.getByTestId('add-spider-button');
+    
+    fireEvent.click(button);
+
+    expect(await screen.findByTestId('surprise-spider')).toBeInTheDocument();
+    expect(button).toHaveTextContent('AHHHHHH!!!');
   });
 
   test('5. Rainbow component receives isSpiderPresent prop correctly', () => {
