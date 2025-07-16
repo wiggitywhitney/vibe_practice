@@ -1,0 +1,23 @@
+git:
+  exclude_patterns:
+  - journal/**
+  - .mcp-commit-storyrc.yaml
+journal:
+  auto_generate: true
+  include_chat: true
+  include_mood: true
+  include_terminal: true
+  path: /Users/wiggitywhitney/Documents/Repositories/vibe_practice/journal
+telemetry:
+  auto_instrumentation:
+    enabled: true
+    preset: minimal
+  deployment_environment: development
+  enabled: false
+  exporters:
+    console:
+      enabled: true
+    otlp:
+      enabled: false
+  service_name: mcp-commit-story
+  service_version: 1.0.0
